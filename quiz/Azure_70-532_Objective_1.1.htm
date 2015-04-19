@@ -117,26 +117,82 @@
 			Two websites are able to share the same hosting plan, as long as they are created within the same region, resource group and subscription.
 		</section>
     </section>
-	<!--
-	<section class="question">
+    <section class="question">
         <section class="text">
-            TODO: Migrating websites between hosting plans
+            Does the existing Azure portal support migrating a website between hosting plans?
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+		<section class="description">
+			The existing Azure portal does not support migrating websites between hosting plans.
+		</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Does the preview Azure portal support migrating a website between hosting plans?
         </section>
         <section class="answer" data-correct>True</section>
         <section class="answer">False</section>
 		<section class="description">
-			Still need to add some questions for this topic.
+		</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            You create a new Azure Web App / Website with the URL prefix of "my-amazing-app". What is the domain / url where the application is accessible from?
+        </section>
+        <section class="answer">my-amazing-app.azure.com</section>
+        <section class="answer" data-correct>my-amazing-app.azurewebsites.net</section>
+        <section class="answer">my-amazing-app.windowsazure.com</section>
+		<section class="description">
+			When Azure Web Apps / Websits are created they are automatically configured with a ".azurewebsites.net" domain name endpoint.
+		</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for creating a new Azure Website / Web App in the existing portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer">Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Click "New" in the command bar, then select "Compute", "Web App", "Quick Create"</section>
+        <section class="answer">Click "New" in the command bar, then select "Compute", "Website", "Quick Create"</section>
+        <section class="answer" data-correct>Enter a URL prefix</section>
+        <section class="answer" data-correct>Click "Create Web App"</section>
+        <section class="answer">Click "Create Website"</section>
+		<section class="description">
+			Recently, Microsoft has renamed the term "Website" to "Web App" within the management portals. The 70-532 exam questions may still reference them as "Website" so it's best to be familiar with this name change.<br/>
+			<img src="quiz/Azure_70-532_Objective_1.1/ExistingPortal_CreateWebApp.png"/>
+		</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for creating a new Azure Website / Web App in the preview portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Click "New", "Web + Mobile", "Web App"</section>
+        <section class="answer">Click "New", "Web + Mobile", "Website"</section>
+        <section class="answer" data-correct>Enter a URL prefix</section>
+        <section class="answer" data-correct>Select existing App Service Plan or create a new one</section>
+        <section class="answer">Select existing Web Hosting Plan or create a new one</section>
+        <section class="answer" data-correct>Click "Create"</section>
+		<section class="description">
+			Recently, Microsoft has renamed the term "Website" to "Web App" within the management portals. The 70-532 exam questions may still reference them as "Website" so it's best to be familiar with this name change. Additionally, "Web Hosting Plan" has been renamed to "App Service Plan".<br/>
+			<img src="quiz/Azure_70-532_Objective_1.1/PreviewPortal_CreateWebApp.png"/>
 		</section>
     </section>
 	<section class="question">
         <section class="text">
-            TODO: Create a website within a hosting plan
+            What are the steps for migrating an existing Azure Website / Web App between App Service Plans within the preview portal?
         </section>
-        <section class="answer" data-correct>True</section>
-        <section class="answer">False</section>
+        <section class="answer" data-correct>Navigate to the Web App blade within the portal at https://portal.azure.com</section>
+        <section class="answer">Navigate to the Web App blade within the portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Click on the ellipses "..." in the menu</section>
+        <section class="answer" data-correct>Click the "Change App Service Plan" menu option</section>
+        <section class="answer">Click the "Migrate App Service Plan" menu option</section>
+        <section class="answer" data-correct>Choose an existing App Service Plan and click "Select"</section>
 		<section class="description">
-			Still need to add some questions for this topic.
+			Recently, Microsoft has renamed the term "Web Hosting Plan" to "App Service Plan". The 70-532 exam questions may still reference them as "Web Hosting Plan" so it's best to be familiar with this change.<br/>
+			<img src="quiz/Azure_70-532_Objective_1.1/PreviewPortal_MigrateAppServicePlan.png"/>
 		</section>
     </section>
-	-->
 </section>

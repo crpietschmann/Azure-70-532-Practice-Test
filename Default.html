@@ -1,0 +1,147 @@
+﻿<!--
+// Azure-70-532-Practice-Test  http://github.com/crpietschmann/Azure-70-532-Practice-Test
+// Copyright (c) 2015 Chris Pietschmann http://pietschsoft.com
+// Licensed under MIT License https://github.com/crpietschmann/Azure-70-532-Practice-Test/blob/master/LICENSE
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Azure Practice Test 70-532</title>
+
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jsQuizEngine.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/bootstrap.min.js"></script>
+    <script src="js/jsQuizEngine.js"></script>
+    <script>
+        var quizEngine = null;
+        $(function () {
+			var selectedQuiz = location.href;
+			
+			if (selectedQuiz.indexOf('?') > -1) {
+				selectedQuiz = selectedQuiz.substr(selectedQuiz.indexOf('?') + 1);
+				if (selectedQuiz.indexOf('#') > -1) {
+					selectedQuiz = selectedQuiz.substr(0, selectedQuiz.indexOf('#'));
+				}
+			} else {
+				selectedQuiz = '1.1';
+			}
+					
+            quizEngine = jsQuizEngine($('#jsQuizEngine'), { quizUrl: 'quiz/Azure_70-532_Objective_' + selectedQuiz + '.htm' });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" onclick="location.reload()">Azure Practice Test 70-532</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" onclick="location.reload()">Reset</a></li>
+					<li>
+						<a href='#' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Load Objective <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li role="presentation" class="dropdown-header">1: Design and Implement Websites</li>
+							<li><a href="?1.1">1.1: Deploy Websites</a></li>
+							<li><a href="?1.2">1.2: Configure Websites</a></li>
+							<!--
+							<li><a href="?1.3">1.3: Configure diagnostics, monitoring and analytics</a></li>
+							<li><a href="?1.4">1.4: Implement web jobs</a></li>
+							<li><a href="?1.5">1.5: Configure websites for scale and resilience</a></li>
+							<li><a href="?1.6">1.6: Design and implement applications for scale and resilience</a></li>
+							<li class="divider"></li>
+							<li role="presentation" class="dropdown-header">2: Objective</li>
+							<li><a href="?2.1">2.1: Deploy workloads on Azure virtual machines (VMs)</a></li>
+							<li><a href="?2.2">2.2: Create and manage a VM image or virtual hard disk</a></li>
+							<li><a href="?2.3">2.3: Perform configuration management</a></li>
+							<li><a href="?2.4">2.4: Configure VM networking</a></li>
+							<li><a href="?2.5">2.5: Scale VMs</a></li>
+							<li><a href="?2.6">2.6: Design and implement VM storage</a></li>
+							<li><a href="?2.7">2.7: Monitor VMs</a></li>
+							<li class="divider"></li>
+							<li role="presentation" class="dropdown-header">3: Objective</li>
+							<li><a href="?3.1">3.1</a></li>
+							<li><a href="?3.2">3.2</a></li>
+							<li><a href="?3.3">3.3</a></li>
+							<li><a href="?3.4">3.4</a></li>
+							<li class="divider"></li>
+							<li role="presentation" class="dropdown-header">4: Objective</li>
+							<li><a href="?4.1">4.1</a></li>
+							<li><a href="?4.2">4.2</a></li>
+							<li><a href="?4.3">4.3</a></li>
+							<li><a href="?4.4">4.4</a></li>
+							<li><a href="?4.5">4.5</a></li>
+							<li><a href="?4.6">4.6</a></li>
+							<li class="divider"></li>
+							<li role="presentation" class="dropdown-header">5: Objective</li>
+							<li><a href="?5.1">5.1</a></li>
+							<li><a href="?5.2">5.2</a></li>
+							<li><a href="?5.3">5.3</a></li>
+							<li><a href="?5.4">5.4</a></li>
+							<li><a href="?5.5">5.5</a></li>
+							<li><a href="?5.6">5.6</a></li>
+							-->
+						</ul>
+					</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="container">
+
+        <div id="jsQuizEngine">
+            <section id="title" data-bind="visible: !quizStarted()">
+                <div class="jumbotron">
+                    <h1 data-bind="text: quizTitle"></h1>
+                    <p data-bind="text: quizSubTitle"></p>
+                    <p><button class="btn btn-primary btn-lg" data-bind="click: startQuiz">Start Quiz</button></p>
+                </div>
+            </section>
+            <section class="quiz" data-bind="visible: quizStarted() && !quizComplete()">
+                <div>Question <span data-bind="text: currentQuestionIndex"></span> of <span data-bind="text: questionCount"></span></div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-bind="attr: { 'aria-valuenow': currentProgress }, style: { width: currentProgress() + '%' }"></div>
+                </div>
+                <div class="question-pool"></div>
+                <button class="btn btn-default" data-bind="click: movePreviousQuestion, disable: currentQuestionIsFirst">Previous</button>
+                <button class="btn btn-default" data-bind="click: showCurrentQuestionAnswer">Show Answer</button>
+                <button class="btn btn-primary" data-bind="click: moveNextQuestion, disable: currentQuestionIsLast, visible: !currentQuestionIsLast()">Next</button>
+                <button class="btn btn-primary" data-bind="click: calculateScore, visible: currentQuestionIsLast">Calculate Score</button>
+            </section>
+            <section class="score" data-bind="visible: quizComplete">
+                <p>Quiz Results:</p>
+                <h2 data-bind="text: quizTitle"></h2>
+                <h3 data-bind="text: quizSubTitle"></h3>
+                <div>Questions: <span data-bind="text: questionCount"></span></div>
+                <div>Date: <span data-bind="text: calculatedScoreDate"></span></div>
+                <div>Overall Score: <span data-bind="text: calculatedScore"></span>%</div>
+                <div>Incorrect Questions: <span data-bind="text: totalQuestionsCorrect"></span></div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-bind="attr: { 'aria-valuenow': calculatedScore }, style: { width: calculatedScore() + '%' }, css: { 'progress-bar-success': quizPassed, 'progress-bar-danger': !quizPassed() }"></div>
+                </div>
+                <div class="pass-indicator">
+                    <h1 data-bind="css: { 'text-success': quizPassed, 'text-danger': !quizPassed() }">
+                        <span data-bind="visible: quizPassed">PASS</span>
+                        <span data-bind="visible: !quizPassed()">FAIL</span>
+                    </h1>
+                </div>
+            </section>
+        </div>
+    </section>
+    <footer class="container">
+		<p>Note: This isn't anywhere near finished yet.</p>
+        Powered by <a href="https://github.com/crpietschmann/jsQuizEngine">jsQuizEngine</a> by <a href="http://pietschsoft.com">Chris Pietschmann</a>
+    </footer>
+</body>
+</html>

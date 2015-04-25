@@ -4,4 +4,104 @@
 	Azure PowerShell 101 - Managing (and debugging) Azure Websites
 	http://channel9.msdn.com/Shows/Azure-Friday/Azure-PowerShell-101-Managing-and-debugging-Azure-WebSites
 	-->
+	<section class="question"> 
+        <section class="text">
+            How are App Settings access from a .NET application?
+        </section>
+        <section class="answer" data-correct>ConfigurationManager.AppSettings</section>
+        <section class="answer">Environment Variables</section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+            How are App Settings access from a non .NET application, such as Node.js, Python, PHP or Java?
+        </section>
+        <section class="answer">ConfigurationManager.AppSettings</section>
+        <section class="answer" data-correct>Environment Variables</section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following C# code for retrieving an App Settings named "AnalyticsID" for use within the app. Line numbers are for reference only.<br/>
+        	<pre>
+        	1. using System;
+        	2. using System.Configuration;
+        	[...]
+        	3. var analyticsID = string.Empty</pre>
+        	Choose which line of code to replace Line # 3 to make this snippet work as expected.
+        </section>
+        <section class="answer"><code>var analyticsID = AppSettings.AnalyticsID;</code></section>
+        <section class="answer"><code>var analyticsID = process.env.AnalyticsID;</code></section>
+        <section class="answer" data-correct><code>var analyticsID = ConfigurationManager.AppSettings["AnalyticsID"];</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following Node.js code for retrieving an App Settings named "AnalyticsID" for use within the app.<br/>
+        	<pre>
+        	var analyticsID = "";</pre>
+        	Which 2 lines of code could be used to access the App Setting value? Each presents a complete solution.
+        </section>
+        <section class="answer"><code>var analyticsID = AppSettings.AnalyticsID;</code></section>
+        <section class="answer" data-correct><code>var analyticsID = process.env.AnalyticsID;</code></section>
+        <section class="answer"><code>var analyticsID = ConfigurationManager.AppSettings["AnalyticsID"];</code></section>
+        <section class="answer" data-correct><code>var analyticsID = process.env.APPSETTING_AnalyticsID;</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following C# code for retrieving a Connection String for a SQL Azure database named "myDatabase" for use within the app. Line numbers are for reference only.<br/>
+        	<pre>
+        	1. using System;
+        	2. using System.Configuration;
+        	[...]
+        	3. var connString = string.Empty</pre>
+        	Choose which line of code to replace Line # 3 to make this snippet work as expected.
+        </section>
+        <section class="answer"><code>var analyticsID = ConnectionStrings.myDatabase;</code></section>
+        <section class="answer" data-correct><code>var connString = ConfigurationManager.ConnectionStrings["myDatabase"].ConnectionString</code></section>
+        <section class="answer"><code>var connString = process.env.SQLAZURECONNSTR_myDatabase;</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following Node.js code for retrieving a Connection String for a SQL Azure database named "myDatabase" for use within the app.<br/>
+        	<pre>
+        	var connString = string.Empty</pre>
+        	Choose which line of code can be used to make this snippet work as expected.
+        </section>
+        <section class="answer"><code>var analyticsID = ConnectionStrings.myDatabase;</code></section>
+        <section class="answer"><code>var connString = process.env.SQLCONNSTR_myDatabase;</code></section>
+        <section class="answer"><code>var connString = ConfigurationManager.ConnectionStrings["myDatabase"].ConnectionString</code></section>
+        <section class="answer" data-correct><code>var connString = process.env.SQLAZURECONNSTR_myDatabase;</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	For a non .NET app, which prefix is used for accessing a Connection String for a SQL Azure database from the Environment Variables?
+        </section>
+        <section class="answer"><code>SQLCONNSTR_</code></section>
+        <section class="answer" data-correct><code>SQLAZURECONNSTR_</code></section>
+        <section class="answer"><code>MYSQLCONNSTR_<code></section>
+        <section class="answer"><code>CUSTOM_CONNSTR_</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	Both Connection Strings and App Settings can be modified when accessed from application code?
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+		<section class="description">
+			App Settings and Connection Strings are read-only when accessed from application code. To modify their values, you must either use the Management Portal, Azure Management API, Windows Powershell, or xplat-cli.
+		</section>
+    </section>
+    <!--
+    Need to write questions on:
+    - Defining App Settings in Existing Portal
+    - Defining App Settings in Preview Portal
+    - Defining Connection Strings in Existing Portal
+    - Defining Connection Strings in Preview Portal
+
+    -->
 </section>

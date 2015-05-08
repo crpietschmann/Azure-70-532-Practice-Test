@@ -8,4 +8,4 @@ FYI, I'm still working on writing all the questions. When I have enough to be ab
 
 Even though things are still in the process of being put together for this practice test, you can still take the questions that have been put together thus far at the following link:
 
-[http://crpietschmann.github.io/Azure-70-532-Practice-Test/](http://crpietschmann.github.io/Azure-70-532-Practice-Test/])
+[http://crpietschmann.github.io/Azure-70-532-Practice-Test/](http://crpietschmann.github.io/Azure-70-532-Practice-Test/)

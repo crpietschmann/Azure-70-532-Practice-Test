@@ -167,10 +167,103 @@
             <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineConnectionString.png" />
         </section>
     </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Request Handler mapping in the existing portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer">Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer">Navigate to the "Handlers" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Scroll down to the "handler mappings" section</section>
+        <section class="answer" data-correct>Type the File Extension to be processed by the handler in the "EXTENSION" field</section>
+        <section class="answer" data-correct>Type the Path for the processor to use for this handler in the "SCRIPT PROCESSOR PATH" field</section>
+        <section class="answer" data-correct>Type any optional command line arguments for the processor in the "ADDITIONAL ARGUMENTS" field</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineHandlerMappings.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Request Handler mapping in the preview portal?
+        </section>
+        <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
+        <section class="answer">Navigate to the "Configure" blade for the Azure Web App</section>
+        <section class="answer">Navigate to the "Handlers" blade for the Azure Web App</section>
+        <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
+        <section class="answer" data-correct>Click "Application settings" to open the Web App settings blade</section>
+        <section class="answer">Click "Handlers" link to open the Handlers blade</section>
+        <section class="answer" data-correct>Scroll down to the "Handler mappings" section</section>
+        <section class="answer" data-correct>Type the File Extension to be processed by the handler in the "Extension" field</section>
+        <section class="answer" data-correct>Type the Path for the processor to use for this handler in the "Processor path" field</section>
+        <section class="answer" data-correct>Type any optional command line arguments for the processor in the "Additional arguments" field</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineHandlerMappings.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            When configuring Request Handlers, what format is required for the Processor Path?
+        </section>
+        <section class="answer">Relative - <code>\bin\php\php-cgi.exe</code></section>
+        <section class="answer" data-correct>Absolute - <code>C:\inetpub\wwwroot\bin\php\php-cgi.exe</code></section>
+        <section class="answer">Any of the above</section>
+        <section class="description">
+            The Processor Path is required to be an Absolute path.<br/>
+            <br/>
+            If the directory the processor you're using is located is:<br/>
+            <code>C:\intepub\wwwroot\bin\php</code><br/>
+            Then the Processor Path must be like the following:<br/>
+            <code>C:\inetpub\wwwroot\bin\php\php-cgi.exe</code>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            When using the PHP support built in to Azure Web Apps, do you need to manually configure the PHP Request Handler mapping?
+        </section>
+        <section class="answer">Yes</code></section>
+        <section class="answer" data-correct>No</section>
+        <section class="description">
+            No, the only time you need to configure the PHP request handler mapping would be if you are using a different PHP runtime that the one included with Azure.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Virtual Directory or Virtual Application mapping in the existing portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer">Navigate to the "Virtual Directory and Apps" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Scroll down to the "virtual applications and directories" section</section>
+        <section class="answer" data-correct>Type the Path in the "Virtual directory" field</section>
+        <section class="answer" data-correct>Type the Physical Path in the "Physical path" field</section>
+        <section class="answer" data-correct>Check the "Application" box if configuring a Virtual Application</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineVirtualDirAndApp.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Virtual Directory or Virtual Application mapping in the preview portal?
+        </section>
+        <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
+        <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
+        <section class="answer" data-correct>Click "Application settings" to open the Web App settings blade</section>
+        <section class="answer">Click "Virtual Directories and Apps" to open the Web App virtual directories and applications blade</section>
+        <section class="answer" data-correct>Scroll down to the "Virtual applications and directories" section</section>
+        <section class="answer" data-correct>Type the Path in the "Virtual directory" field</section>
+        <section class="answer" data-correct>Type the Physical Path in the "Physical path" field</section>
+        <section class="answer" data-correct>Check the "Application" box if configuring a Virtual Application</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineVirtualDirAndApp.png" />
+        </section>
+    </section>
     <!--
     Need to write questions on:
-        - Defining Request Handler mappings
-        - Defining Virtual Directories and Virtual Applications
         - Configure Custom Domains
         - Configure Certificates
         - Using the *.azurewebsites.net domain certificate

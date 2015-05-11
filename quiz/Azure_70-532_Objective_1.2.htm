@@ -306,12 +306,9 @@
             Which App Service Pricing Plans support Custom Domains?
         </section>
         <section class="answer">Free</section>
-		<section class="answer">Community</section>
         <section class="answer" data-correct>Shared</section>
 		<section class="answer" data-correct>Basic</section>
-		<section class="answer">Advanced</section>
 		<section class="answer" data-correct>Standard</section>
-		<section class="answer">Enterprise</section>
 		<section class="description"></section>
     </section>
     <section class="question">
@@ -504,6 +501,26 @@
         <section class="description">
             Any DNS changes must be made manually. Azure does not have functionality to change the DNS records automatically.
         </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Azure Web Apps automatically support SSL for the http://{sitename}.azurewebsites.net domain.
+        </section>
+        <section class="answer" data-correct>True</section>
+        <section class="answer">False</section>
+        <section class="description">
+            Azure Web Apps have SSL support build in for the "*.azurewebsites.net" domain name. You only need to configure SSL if you wish to use it with a Custom Domain.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which App Service Pricing Plans support SSL?
+        </section>
+        <section class="answer">Free</section>
+        <section class="answer">Shared</section>
+		<section class="answer" data-correct>Basic</section>
+		<section class="answer" data-correct>Standard</section>
+		<section class="description"></section>
     </section>
     <!--
     Need to write questions on:

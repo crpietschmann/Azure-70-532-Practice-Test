@@ -262,9 +262,251 @@
             <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineVirtualDirAndApp.png" />
         </section>
     </section>
+    <section class="question">
+        <section class="text">
+            Only a single Application can be hosted within a Web App. Multiple Web Apps need to be created to host multiple applications.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description">
+            Yes, Multiple applications can be hosted within a single Web App by configuring a Virtual Directory for each as an Application within the "Virtual Applications and Directories" configuration.<br/>
+            A direct analogy to this are Virtual Applications within IIS. In fact, Web Apps on Azure are hosted using IIS web server behind the scenes.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What DNS record type is set when mapping a Custom Domain to be an alias for the default {sitename}.azurewebsites.net domain name assigned to a Web App by Azure?
+        </section>
+        <section class="answer">A</section>
+        <section class="answer" data-correct>CNAME</section>
+        <section class="answer">MX</section>
+        <section class="answer">TXT</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What DNS record type is set when mapping the IP Address for a Web App to a Custom Domain?
+        </section>
+        <section class="answer" data-correct>A</section>
+        <section class="answer">CNAME</section>
+        <section class="answer">MX</section>
+        <section class="answer">TXT</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            The DNS records for your Web App are managed directly within the Application Settings in Azure.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which App Service Pricing Plans support Custom Domains?
+        </section>
+        <section class="answer">Free</section>
+		<section class="answer">Community</section>
+        <section class="answer" data-correct>Shared</section>
+		<section class="answer" data-correct>Basic</section>
+		<section class="answer">Advanced</section>
+		<section class="answer" data-correct>Standard</section>
+		<section class="answer">Enterprise</section>
+		<section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for finding the IP Address where the Web App is hosted for using within a Custom Domain DNS mapping in the existing portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer">Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Scroll down to the "domain names" section</section>
+        <section class="answer" data-correct>Click on the "manage domains" button</section>
+        <section class="answer" data-correct>The IP Address is located in the "Manage custom domains" dialog box</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineCustomDomain.png" /><br/>
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineCustomDomain2.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Virtual Directory or Virtual Application mapping in the preview portal?
+        </section>
+        <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
+        <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
+        <section class="answer">Click on the "manage domains" button</section>
+        <section class="answer" data-correct>Click "Custom domains and SSL" to open the Web App custom domains and SSL blade</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineCustomDomain.png" /><br/>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for managing Custom Domains for a Web App within the existing portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer">Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Scroll down to the "domain names" section</section>
+        <section class="answer" data-correct>Click on the "manage domains" button</section>
+        <section class="answer" data-correct>Enter the domain name in the "Domain Name" field and click the checkbox button to save</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineCustomDomain.png" /><br/>
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineCustomDomain2.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for managing Custom Domains for a Web App within the preview portal?
+        </section>
+        <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
+        <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
+        <section class="answer">Click on the "manage domains" button</section>
+        <section class="answer" data-correct>Click "Custom domains and SSL" to open the Web App custom domains and SSL blade</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineCustomDomain.png" /><br/>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Before mapping a Custom Domain to the "my-amazing-app" Web App using a DNS alias to the IP Address, the custom domain name needs to have a CNAME record created with what value?
+        </section>
+        <section class="answer">verify.azurewebsites.net</section>
+        <section class="answer">awverify.azurewebsites.net</section>
+        <section class="answer">verify.my-amazing-app.azurewebsites.net</section>
+        <section class="answer" data-correct>awverify.my-amazing-app.azurewebsites.net</section>
+        <section class="description">
+            Setting up a CNAME record of "awverify.{sitename}.azurewebsites.net" (substitute the "{sitename}" with the name of the Azure Web App) within the DNS of the Custom Domain lets Azure verify that you either own or otherwise have control over the domain name.<br/>
+            This CNAME record must be created on the Custom Domain name prior to setting up the Custom Domain within the Azure Web App configuration.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map just the root domain of "fabrikam.com" to the Azure Web App by IP Address, what DNS record and settings need to be created?
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>www</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map the root domain of "fabrikam.com" and all it's subdomains to the Azure Web App by IP Address, what DNS record and settings need to be created?
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>www</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map the root domain of "fabrikam.com" and all it's subdomains to the Azure Web App by alias, what DNS record and settings need to be created?
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map just the domain of "www.fabrikam.com" to the Azure Web App by alias, what DNS record and settings need to be created?
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>www</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What events will cause the IP Address assigned to the Web App to change?
+        </section>
+        <section class="answer" data-correct>If the App Service Pricing Plan is changed to Free</section>
+        <section class="answer" data-correct>If SSL is enabled with "IP Based SSL" option</section>
+        <section class="answer">If a new Custom Domain is added</section>
+        <section class="answer" data-correct>If the Web App is Deleted and then Re-Create</section>
+        <section class="answer">When new code is deployed</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            When using a Custom Domain with a Web App, Azure will automatically update the DNS records if IP Address or Web App configurations change.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description">
+            Any DNS changes must be made manually. Azure does not have functionality to change the DNS records automatically.
+        </section>
+    </section>
     <!--
     Need to write questions on:
-        - Configure Custom Domains
         - Configure Certificates
         - Using the *.azurewebsites.net domain certificate
         - - security vulnerabilities

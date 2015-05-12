@@ -1,3 +1,532 @@
 <section class="quiz" data-title="Developing Microsoft Azure Solutions (70-532) - Objective 1: Design and Implement Websites" data-subtitle="Objective 1.2: Configure Websites">
-    <!-- No questions added yet -->
+	<!-- 
+	Azure PowerShell 101 - Managing (and debugging) Azure Websites
+	http://channel9.msdn.com/Shows/Azure-Friday/Azure-PowerShell-101-Managing-and-debugging-Azure-WebSites
+	-->
+	<section class="question"> 
+        <section class="text">
+            How are App Settings access from a .NET application?
+        </section>
+        <section class="answer" data-correct>ConfigurationManager.AppSettings</section>
+        <section class="answer">Environment Variables</section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+            How are App Settings access from a non .NET application, such as Node.js, Python, PHP or Java?
+        </section>
+        <section class="answer">ConfigurationManager.AppSettings</section>
+        <section class="answer" data-correct>Environment Variables</section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following C# code for retrieving an App Settings named "AnalyticsID" for use within the app. Line numbers are for reference only.<br/>
+        	<pre>
+        	1. using System;
+        	2. using System.Configuration;
+        	[...]
+        	3. var analyticsID = string.Empty</pre>
+        	Choose which line of code to replace Line # 3 to make this snippet work as expected.
+        </section>
+        <section class="answer"><code>var analyticsID = AppSettings.AnalyticsID;</code></section>
+        <section class="answer"><code>var analyticsID = process.env.AnalyticsID;</code></section>
+        <section class="answer" data-correct><code>var analyticsID = ConfigurationManager.AppSettings["AnalyticsID"];</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following Node.js code for retrieving an App Settings named "AnalyticsID" for use within the app.<br/>
+        	<pre>
+        	var analyticsID = "";</pre>
+        	Which 2 lines of code could be used to access the App Setting value? Each presents a complete solution.
+        </section>
+        <section class="answer"><code>var analyticsID = AppSettings.AnalyticsID;</code></section>
+        <section class="answer" data-correct><code>var analyticsID = process.env.AnalyticsID;</code></section>
+        <section class="answer"><code>var analyticsID = ConfigurationManager.AppSettings["AnalyticsID"];</code></section>
+        <section class="answer" data-correct><code>var analyticsID = process.env.APPSETTING_AnalyticsID;</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following C# code for retrieving a Connection String for a SQL Azure database named "myDatabase" for use within the app. Line numbers are for reference only.<br/>
+        	<pre>
+        	1. using System;
+        	2. using System.Configuration;
+        	[...]
+        	3. var connString = string.Empty</pre>
+        	Choose which line of code to replace Line # 3 to make this snippet work as expected.
+        </section>
+        <section class="answer"><code>var analyticsID = ConnectionStrings.myDatabase;</code></section>
+        <section class="answer" data-correct><code>var connString = ConfigurationManager.ConnectionStrings["myDatabase"].ConnectionString</code></section>
+        <section class="answer"><code>var connString = process.env.SQLAZURECONNSTR_myDatabase;</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following Node.js code for retrieving a Connection String for a SQL Azure database named "myDatabase" for use within the app.<br/>
+        	<pre>
+        	var connString = string.Empty</pre>
+        	Choose which line of code can be used to make this snippet work as expected.
+        </section>
+        <section class="answer"><code>var analyticsID = ConnectionStrings.myDatabase;</code></section>
+        <section class="answer"><code>var connString = process.env.SQLCONNSTR_myDatabase;</code></section>
+        <section class="answer"><code>var connString = ConfigurationManager.ConnectionStrings["myDatabase"].ConnectionString</code></section>
+        <section class="answer" data-correct><code>var connString = process.env.SQLAZURECONNSTR_myDatabase;</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	For a non .NET app, which prefix is used for accessing a Connection String for a SQL Azure database from the Environment Variables?
+        </section>
+        <section class="answer"><code>SQLCONNSTR_</code></section>
+        <section class="answer" data-correct><code>SQLAZURECONNSTR_</code></section>
+        <section class="answer"><code>MYSQLCONNSTR_</code></section>
+        <section class="answer"><code>CUSTOM_CONNSTR_</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	Both Connection Strings and App Settings can be modified when accessed from application code?
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+		<section class="description">
+			App Settings and Connection Strings are read-only when accessed from application code. To modify their values, you must either use the Management Portal, Azure Management API, Windows Powershell, or xplat-cli.
+		</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining an App Setting in the existing portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer">Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Scroll down to the "app settings" section</section>
+        <section class="answer">Modify the JSON that defines the app settings</section>
+        <section class="answer">Modify the XML that defines the app settings</section>
+        <section class="answer" data-correct>Type the name for the app setting in the "Key" field</section>
+        <section class="answer" data-correct>Type the value for the app setting in the "Value" field</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineAppSetting.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining an App Setting in the preview portal?
+        </section>
+        <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
+        <section class="answer">Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
+        <section class="answer" data-correct>Click "Application settings" to open the Web app setting blade</section>
+        <section class="answer" data-correct>Scroll down to the "App settings" section</section>
+        <section class="answer">Modify the JSON that defines the app settings</section>
+        <section class="answer">Modify the XML that defines the app settings</section>
+        <section class="answer" data-correct>Type the name for the app setting in the "Key" field</section>
+        <section class="answer" data-correct>Type the value for the app setting in the "Value" field</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineAppSetting.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Connection String in the existing portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer">Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Scroll down to the "connection strings" section</section>
+        <section class="answer">Modify the JSON that defines the connection strings</section>
+        <section class="answer">Modify the XML that defines the connection strings</section>
+        <section class="answer" data-correct>Type the name for the connection string in the "Key" field</section>
+        <section class="answer" data-correct>Type the value for the connection string in the "Value" field</section>
+        <section class="answer" data-correct>Select the database type (SQL Database, SQL Server, MySQL, Custom) in the dropdown</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineConnectionString.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Connection String in the preview portal?
+        </section>
+        <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
+        <section class="answer">Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
+        <section class="answer" data-correct>Click "Application settings" to open the Web app setting blade</section>
+        <section class="answer" data-correct>Scroll down to the "Connection strings" section</section>
+        <section class="answer">Modify the JSON that defines the connection strings</section>
+        <section class="answer">Modify the XML that defines the connection strings</section>
+        <section class="answer" data-correct>Type the name for the connection string in the "Key" field</section>
+        <section class="answer" data-correct>Type the value for the connection string in the "Value" field</section>
+        <section class="answer" data-correct>Select the database type (SQL Database, SQL Server, MySQL, Custom) in the dropdown</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineConnectionString.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Request Handler mapping in the existing portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer">Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer">Navigate to the "Handlers" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Scroll down to the "handler mappings" section</section>
+        <section class="answer" data-correct>Type the File Extension to be processed by the handler in the "EXTENSION" field</section>
+        <section class="answer" data-correct>Type the Path for the processor to use for this handler in the "SCRIPT PROCESSOR PATH" field</section>
+        <section class="answer" data-correct>Type any optional command line arguments for the processor in the "ADDITIONAL ARGUMENTS" field</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineHandlerMappings.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Request Handler mapping in the preview portal?
+        </section>
+        <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
+        <section class="answer">Navigate to the "Configure" blade for the Azure Web App</section>
+        <section class="answer">Navigate to the "Handlers" blade for the Azure Web App</section>
+        <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
+        <section class="answer" data-correct>Click "Application settings" to open the Web App settings blade</section>
+        <section class="answer">Click "Handlers" link to open the Handlers blade</section>
+        <section class="answer" data-correct>Scroll down to the "Handler mappings" section</section>
+        <section class="answer" data-correct>Type the File Extension to be processed by the handler in the "Extension" field</section>
+        <section class="answer" data-correct>Type the Path for the processor to use for this handler in the "Processor path" field</section>
+        <section class="answer" data-correct>Type any optional command line arguments for the processor in the "Additional arguments" field</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineHandlerMappings.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            When configuring Request Handlers, what format is required for the Processor Path?
+        </section>
+        <section class="answer">Relative - <code>\bin\php\php-cgi.exe</code></section>
+        <section class="answer" data-correct>Absolute - <code>C:\inetpub\wwwroot\bin\php\php-cgi.exe</code></section>
+        <section class="answer">Any of the above</section>
+        <section class="description">
+            The Processor Path is required to be an Absolute path.<br/>
+            <br/>
+            If the directory the processor you're using is located is:<br/>
+            <code>C:\intepub\wwwroot\bin\php</code><br/>
+            Then the Processor Path must be like the following:<br/>
+            <code>C:\inetpub\wwwroot\bin\php\php-cgi.exe</code>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            When using the PHP support built in to Azure Web Apps, do you need to manually configure the PHP Request Handler mapping?
+        </section>
+        <section class="answer">Yes</code></section>
+        <section class="answer" data-correct>No</section>
+        <section class="description">
+            No, the only time you need to configure the PHP request handler mapping would be if you are using a different PHP runtime that the one included with Azure.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Virtual Directory or Virtual Application mapping in the existing portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer">Navigate to the "Virtual Directory and Apps" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Scroll down to the "virtual applications and directories" section</section>
+        <section class="answer" data-correct>Type the Path in the "Virtual directory" field</section>
+        <section class="answer" data-correct>Type the Physical Path in the "Physical path" field</section>
+        <section class="answer" data-correct>Check the "Application" box if configuring a Virtual Application</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineVirtualDirAndApp.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Virtual Directory or Virtual Application mapping in the preview portal?
+        </section>
+        <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
+        <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
+        <section class="answer" data-correct>Click "Application settings" to open the Web App settings blade</section>
+        <section class="answer">Click "Virtual Directories and Apps" to open the Web App virtual directories and applications blade</section>
+        <section class="answer" data-correct>Scroll down to the "Virtual applications and directories" section</section>
+        <section class="answer" data-correct>Type the Path in the "Virtual directory" field</section>
+        <section class="answer" data-correct>Type the Physical Path in the "Physical path" field</section>
+        <section class="answer" data-correct>Check the "Application" box if configuring a Virtual Application</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineVirtualDirAndApp.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Only a single Application can be hosted within a Web App. Multiple Web Apps need to be created to host multiple applications.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description">
+            Yes, Multiple applications can be hosted within a single Web App by configuring a Virtual Directory for each as an Application within the "Virtual Applications and Directories" configuration.<br/>
+            A direct analogy to this are Virtual Applications within IIS. In fact, Web Apps on Azure are hosted using IIS web server behind the scenes.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What DNS record type is set when mapping a Custom Domain to be an alias for the default {sitename}.azurewebsites.net domain name assigned to a Web App by Azure?
+        </section>
+        <section class="answer">A</section>
+        <section class="answer" data-correct>CNAME</section>
+        <section class="answer">MX</section>
+        <section class="answer">TXT</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What DNS record type is set when mapping the IP Address for a Web App to a Custom Domain?
+        </section>
+        <section class="answer" data-correct>A</section>
+        <section class="answer">CNAME</section>
+        <section class="answer">MX</section>
+        <section class="answer">TXT</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            The DNS records for your Web App are managed directly within the Application Settings in Azure.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which App Service Pricing Plans support Custom Domains?
+        </section>
+        <section class="answer">Free</section>
+        <section class="answer" data-correct>Shared</section>
+		<section class="answer" data-correct>Basic</section>
+		<section class="answer" data-correct>Standard</section>
+		<section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for finding the IP Address where the Web App is hosted for using within a Custom Domain DNS mapping in the existing portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer">Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Scroll down to the "domain names" section</section>
+        <section class="answer" data-correct>Click on the "manage domains" button</section>
+        <section class="answer" data-correct>The IP Address is located in the "Manage custom domains" dialog box</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineCustomDomain.png" /><br/>
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineCustomDomain2.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for defining a Virtual Directory or Virtual Application mapping in the preview portal?
+        </section>
+        <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
+        <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
+        <section class="answer">Click on the "manage domains" button</section>
+        <section class="answer" data-correct>Click "Custom domains and SSL" to open the Web App custom domains and SSL blade</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineCustomDomain.png" /><br/>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for managing Custom Domains for a Web App within the existing portal?
+        </section>
+        <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer">Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer" data-correct>Scroll down to the "domain names" section</section>
+        <section class="answer" data-correct>Click on the "manage domains" button</section>
+        <section class="answer" data-correct>Enter the domain name in the "Domain Name" field and click the checkbox button to save</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineCustomDomain.png" /><br/>
+            <img src="quiz/Azure_70-532_Objective_1.2/ExistingPortal_DefineCustomDomain2.png" />
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the steps for managing Custom Domains for a Web App within the preview portal?
+        </section>
+        <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
+        <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
+        <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
+        <section class="answer">Click on the "manage domains" button</section>
+        <section class="answer" data-correct>Click "Custom domains and SSL" to open the Web App custom domains and SSL blade</section>
+        <section class="description">
+            <img src="quiz/Azure_70-532_Objective_1.2/PreviewPortal_DefineCustomDomain.png" /><br/>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Before mapping a Custom Domain to the "my-amazing-app" Web App using a DNS alias to the IP Address, the custom domain name needs to have a CNAME record created with what value?
+        </section>
+        <section class="answer">verify.azurewebsites.net</section>
+        <section class="answer">awverify.azurewebsites.net</section>
+        <section class="answer">verify.my-amazing-app.azurewebsites.net</section>
+        <section class="answer" data-correct>awverify.my-amazing-app.azurewebsites.net</section>
+        <section class="description">
+            Setting up a CNAME record of "awverify.{sitename}.azurewebsites.net" (substitute the "{sitename}" with the name of the Azure Web App) within the DNS of the Custom Domain lets Azure verify that you either own or otherwise have control over the domain name.<br/>
+            This CNAME record must be created on the Custom Domain name prior to setting up the Custom Domain within the Azure Web App configuration.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map just the root domain of "fabrikam.com" to the Azure Web App by IP Address, what DNS record and settings need to be created?
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>www</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map the root domain of "fabrikam.com" and all it's subdomains to the Azure Web App by IP Address, what DNS record and settings need to be created?
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>www</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map the root domain of "fabrikam.com" and all it's subdomains to the Azure Web App by alias, what DNS record and settings need to be created?
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map just the domain of "www.fabrikam.com" to the Azure Web App by alias, what DNS record and settings need to be created?
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>www</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What events will cause the IP Address assigned to the Web App to change?
+        </section>
+        <section class="answer" data-correct>If the App Service Pricing Plan is changed to Free</section>
+        <section class="answer" data-correct>If SSL is enabled with "IP Based SSL" option</section>
+        <section class="answer">If a new Custom Domain is added</section>
+        <section class="answer" data-correct>If the Web App is Deleted and then Re-Create</section>
+        <section class="answer">When new code is deployed</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            When using a Custom Domain with a Web App, Azure will automatically update the DNS records if IP Address or Web App configurations change.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description">
+            Any DNS changes must be made manually. Azure does not have functionality to change the DNS records automatically.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Azure Web Apps automatically support SSL for the http://{sitename}.azurewebsites.net domain.
+        </section>
+        <section class="answer" data-correct>True</section>
+        <section class="answer">False</section>
+        <section class="description">
+            Azure Web Apps have SSL support build in for the "*.azurewebsites.net" domain name. You only need to configure SSL if you wish to use it with a Custom Domain.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which App Service Pricing Plans support SSL?
+        </section>
+        <section class="answer">Free</section>
+        <section class="answer">Shared</section>
+		<section class="answer" data-correct>Basic</section>
+		<section class="answer" data-correct>Standard</section>
+		<section class="description"></section>
+    </section>
+    <!--
+    Need to write questions on:
+        - Configure Certificates
+        - Using the *.azurewebsites.net domain certificate
+        - - security vulnerabilities
+        - Configuring SSL
+    -->
 </section>

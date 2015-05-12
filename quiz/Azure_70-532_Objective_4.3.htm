@@ -63,7 +63,7 @@ using Microsoft.WindowsAzure.Storage.Queue;</pre><br/>
         <section class="text">
             Which code retrieves the Azure Storage Queue connection string named "myStorageQueue" that is stored within the Web.Config or App.Config?
         </section>
-        <section class="answer"><code>var storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("myStorageQueue"));</code></section>
+        <section class="answer"><pre>var storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("myStorageQueue"));</pre></section>
         <section class="answer" data-correct><pre>using System.Configuration;
 [...]
 var storageAccount = CloudStorageAccount.Parse(ConfigurationManager.ConnectionStrings["myStorageQueue"]);</pre></section>
@@ -177,10 +177,10 @@ queue.Remove(message);</pre></section>
 CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 CloudQueue queue = queueClient.GetQueueReference("myqueue");</pre>
         </section>
-        <section class="answer"><code>int? queueMessageCount = queue.MessageCount;<code></section>
-        <section class="answer" data-correct><code>int? queueMessageCount = queue.ApproximateMessageCount;<code></section>
-        <section class="answer"><code>double? queueMessageCount = queue.MessageCount;<code></section>
-        <section class="answer"><code>double? queueMessageCount = queue.ApproximateMessageCount;<code></section>
+        <section class="answer"><code>int? queueMessageCount = queue.MessageCount;</code></section>
+        <section class="answer" data-correct><code>int? queueMessageCount = queue.ApproximateMessageCount;</code></section>
+        <section class="answer"><code>double? queueMessageCount = queue.MessageCount;</code></section>
+        <section class="answer"><code>double? queueMessageCount = queue.ApproximateMessageCount;</code></section>
         <section class="description"></section>
     </section>
     <section class="question">

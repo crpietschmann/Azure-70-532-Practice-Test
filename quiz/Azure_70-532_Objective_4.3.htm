@@ -1,3 +1,215 @@
 <section class="quiz" data-title="Developing Microsoft Azure Solutions (70-532) - Objective 4: Design and implement a storage strategy" data-subtitle="Objective 4.3: Implement Azure storage queues">
     <!-- No questions added yet -->
+    <section class="question">
+        <section class="text">
+            What are the most common uses of Azure Storage Queue?
+        </section>
+        <section class="answer">Storing application data between user sessions</section>
+        <section class="answer" data-correct>Creating a backlog of work to process asynchronously</section>
+        <section class="answer">Storing ordered lists of data; such as shopping list or top grossing accounts</section>
+        <section class="answer" data-correct>Passing messages from an Azure Web role to an Azure Worker role</section>
+        <section class="description">
+            Azure Storage Queue's are used for storing messages to be passed from one app to another, or to queue work to be done later.<br/>
+            More Info: <a href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-queues/">http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-queues/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is the message size limit in a Azure Storage Queue?
+        </section>
+        <section class="answer">32 KB</section>
+        <section class="answer" data-correct>64 KB</section>
+        <section class="answer">128 KB</section>
+        <section class="answer">1 MB</section>
+        <section class="answer">Unlimited</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What URL format is used to access an Azure Storage Queue?
+        </section>
+        <section class="answer">http://{storage account}.{queue}.core.windows.net</section>
+        <section class="answer" data-correct>http://{storage account}.queue.core.windows.net/{queue}</section>
+        <section class="description">
+            <code>{storage account}</code> is the ID for the Azure Storage Account<br/>
+            <code>{queue}</code> is the ID for the Queue<br/>
+            <br/>
+            For example: <code>http://myaccount.queue.core.windows.net/imagesToDownload</code>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is the valid Connetion String format for an Azure Storage Queue connection string used from .NET?
+        </section>
+        <section class="answer" data-correct><code>DefaultEndpointsProtocol=https;AccountName={account name};AccountKey={account-key}</code></section>
+        <section class="answer"><code>Server={azure storag queue endpoint};Queue={queue};Password={password};Encrypt=True;</code></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            The following namespace declarations are necessary to programatically access Azure Storage Queue's from C#:<br/>
+            <pre>using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.WindowsAzure.Storage.Queue;</pre><br/>
+            Which assembly reference is necessary to use these namespaces?
+        </section>
+        <section class="answer">Microsoft.WindowsAzure.dll</section>
+        <section class="answer" data-correct>Microsoft.WindowsAzure.Storage.dll</section>
+        <section class="answer">Microsoft.WindowsAzure.Storage.Queue.dll</section>
+        <section class="description">
+            More Info: <a href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-queues/#programmatically-access-queue-storage">http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-queues/#programmatically-access-queue-storage</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which code retrieves the Azure Storage Queue connection string named "myStorageQueue" that is stored within the Web.Config or App.Config?
+        </section>
+        <section class="answer"><code>var storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("myStorageQueue"));</code></section>
+        <section class="answer" data-correct><pre>using System.Configuration;
+[...]
+var storageAccount = CloudStorageAccount.Parse(ConfigurationManager.ConnectionStrings["myStorageQueue"]);</pre></section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which C# code gets a reference to a Azure Storage Queue and creates it if it does not exist yet?
+        </section>
+        <section class="answer"><pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueue queue = queueClient.GetQueueReference("myqueue");</pre></section>
+        <section class="answer" data-correct><pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
+queue.CreateIfNotEdists();</pre></section>
+        <section class="answer"><pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueue queue = queueClient.CreateQueueReference("myqueue");
+</pre></section>
+        <section class="answer"><pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
+if (queue == null) {
+    queue = queueClient.CreateQueue("myqueue");
+}</pre></section>
+        <section class="description">
+            More Info: <a href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-queues/#create-a-queue">http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-queues/#create-a-queue</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Given the following code for retrieveing a reference to an Azure Storage Queue, choose the code that adds a new message to the queue.<br/>
+            <br/>
+            <pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueue queue = queueClient.GetQueueReference("myqueue");</pre>
+        </section>
+        <section class="answer" data-correct><pre>var message = new CloudQueueMessage("Hello, Queue World!");
+queue.AddMessage(message);</pre></section>
+        <section class="answer"><pre>var message = new CloudQueueMessage("Hello, Queue World!");
+queue.AppendMessage(message);</pre></section>
+        <section class="answer"><pre>var message = new CloudQueueMessage("Hello, Queue World!");
+queue.Add(message);</pre></section>
+        <section class="answer"><pre>var message = new CloudQueueMessage("Hello, Queue World!");
+queue.Append(message);</pre></section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Given the following code for retrieveing a reference to an Azure Storage Queue, choose the code that peeks at the next message in the queue without removing it.<br/>
+            <br/>
+            <pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueue queue = queueClient.GetQueueReference("myqueue");</pre>
+        </section>
+        <section class="answer" data-correct><code>CloudQueueMessage peekedMessage = queue.PeekMessage();</code></section>
+        <section class="answer"><code>CloudQueueMessage peekedMessage = queue.ViewMessage();</code></section>
+        <section class="answer"><code>CloudQueueMessage peekedMessage = queue.ReadMessage();</code></section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Given the following code for retrieveing a reference to an Azure Storage Queue, choose the code that changes the contents of a message in the queue and make it immediately visible again.<br/>
+            <br/>
+            <pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueue queue = queueClient.GetQueueReference("myqueue");</pre>
+        </section>
+            <section class="answer"><pre>CloudQueueMessage message = queue.GetMessage();
+message.SetMessageContent("Updated message content");
+queue.UpdateMessage(message);</pre></section>
+    <section class="answer"><pre>CloudQueueMessage message = queue.GetMessage();
+message.Content = "Updated message content";
+queue.UpdateMessage(message);</pre></section>
+        <section class="answer" data-correct><pre>CloudQueueMessage message = queue.GetMessage();
+message.SetMessageContent("Updated message content");
+queue.UpdateMessage(message,
+    TimeSpan.FromSeconds(0.0),
+    MessageUpdateFields.Content | MessageUpdateFields.Visibility);</pre></section>
+        <section class="answer"><pre>CloudQueueMessage message = queue.GetMessage();
+message.Content = "Updated message content";
+queue.UpdateMessage(message,
+    TimeSpan.FromSeconds(0.0),
+    MessageUpdateFields.Content | MessageUpdateFields.Visibility);</pre></section>       
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Given the following code for retrieveing a reference to an Azure Storage Queue, choose the code that removes the next message from the queue.<br/>
+            <br/>
+            <pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueue queue = queueClient.GetQueueReference("myqueue");</pre>
+        </section>
+        <section class="answer"><pre>CloudQueueMessage message = queue.GetMessage();
+queue.RemoveMessage(message);</pre></section>
+        <section class="answer" data-correct><pre>CloudQueueMessage message = queue.GetMessage();
+queue.DeleteMessage(message);</pre></section>
+        <section class="answer"><pre>CloudQueueMessage message = queue.GetMessage();
+queue.Delete(message);</pre></section>
+        <section class="answer"><pre>CloudQueueMessage message = queue.GetMessage();
+queue.Remove(message);</pre></section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Given the following code for retrieveing a reference to an Azure Storage Queue, choose the code that retrieves the length of the queue.<br/>
+            <br/>
+            <pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueue queue = queueClient.GetQueueReference("myqueue");</pre>
+        </section>
+        <section class="answer"><code>int? queueMessageCount = queue.MessageCount;<code></section>
+        <section class="answer" data-correct><code>int? queueMessageCount = queue.ApproximateMessageCount;<code></section>
+        <section class="answer"><code>double? queueMessageCount = queue.MessageCount;<code></section>
+        <section class="answer"><code>double? queueMessageCount = queue.ApproximateMessageCount;<code></section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is the code to delete an Azure Storage Queue?
+        </section>
+        <section class="answer"><pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
+queue.Delete();
+queueClient.Save();</pre></section>
+        <section class="answer"><pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+queueClient.DeleteQueue("myqueue");</pre></section>
+        <section class="answer" data-correct><pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+CloudQueue queue = queueClient.GetQueueReference("myqueue");
+queue.Delete();</pre></section>
+        <section class="answer"><pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
+CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+queueClient.DeleteQueue("myqueue");
+queueClient.Save();</pre></section>
+        <section class="description"></section>
+    </section>
+    <!--
+        - Creating Queue's within Existing Portal and Preview Portal
+        
+        - Process messages
+        - Retrieve a batch of messages
+        - Scale queues
+    -->
 </section>

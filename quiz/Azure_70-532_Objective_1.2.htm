@@ -522,11 +522,21 @@
 		<section class="answer" data-correct>Standard</section>
 		<section class="description"></section>
     </section>
+    <section class="question">
+        <section class="text">
+            Azure Web Apps only support IP Address based SSL connections.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description">
+            Azure Web Apps actually support 2 types of SSL connections:<br/>
+            <blockquote>Azure Websites supports two types of SSL connections: Server Name Indication (SNI) SSL Connections and IP Address SSL Connections. SNI-based SSL works on modern browsers while IP-based SSL works on all browsers.</blockquote>
+            Source: <a href="http://azure.microsoft.com/en-us/pricing/details/websites/">http://azure.microsoft.com/en-us/pricing/details/websites/</a>
+        </section>
+    </section>
     <!--
     Need to write questions on:
         - Configure Certificates
-        - Using the *.azurewebsites.net domain certificate
-        - - security vulnerabilities
         - Configuring SSL
     -->
 </section>

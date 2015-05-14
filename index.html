@@ -19,15 +19,22 @@
     <script>
         var quizEngine = null;
         $(function () {
-			var selectedQuiz = location.href;
+            var selectedQuiz = location.href;
 			
 			if (selectedQuiz.indexOf('?') > -1) {
-				selectedQuiz = selectedQuiz.substr(selectedQuiz.indexOf('?') + 1);
+			    selectedQuiz = selectedQuiz.substr(selectedQuiz.indexOf('?') + 1);
 				if (selectedQuiz.indexOf('#') > -1) {
 					selectedQuiz = selectedQuiz.substr(0, selectedQuiz.indexOf('#'));
 				}
 			} else {
 				selectedQuiz = null;
+			}
+
+			if (selectedQuiz !== null) {
+			    // fix referrals from Twitter and other services
+			    if (isNaN(+selectedQuiz.substr(0, 1))) {
+			        document.location = '?';
+			    }
 			}
 
 			if (selectedQuiz) {

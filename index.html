@@ -276,7 +276,7 @@
                 <div>Questions: <span data-bind="text: questionCount"></span></div>
                 <div>Date: <span data-bind="text: calculatedScoreDate"></span></div>
                 <div>Overall Score: <span data-bind="text: calculatedScore"></span>%</div>
-                <div>Incorrect Questions: <span data-bind="text: totalQuestionsCorrect"></span></div>
+                <div>Correct Questions: <span data-bind="text: totalQuestionsCorrect"></span></div>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-bind="attr: { 'aria-valuenow': calculatedScore }, style: { width: calculatedScore() + '%' }, css: { 'progress-bar-success': quizPassed, 'progress-bar-danger': !quizPassed() }"></div>
                 </div>

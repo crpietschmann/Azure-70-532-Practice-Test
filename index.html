@@ -62,56 +62,8 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul id="navbar-intest" class="nav navbar-nav">
-                    <li><a href="#" onclick="location.reload()">Reset</a></li>
-					<li>
-						<a href='#' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Load Objective <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li role="presentation" class="dropdown-header">1: Design and Implement Websites</li>
-							<li><a href="?1.1">1.1: Deploy Websites</a></li>
-							<li><a href="?1.2">1.2: Configure Websites</a></li>
-							<!--
-							<li><a href="?1.3">1.3: Configure diagnostics, monitoring and analytics</a></li>
-							<li><a href="?1.4">1.4: Implement web jobs</a></li>
-							<li><a href="?1.5">1.5: Configure websites for scale and resilience</a></li>
-							<li><a href="?1.6">1.6: Design and implement applications for scale and resilience</a></li>
-							<li class="divider"></li>
-							<li role="presentation" class="dropdown-header">2: Objective</li>
-							<li><a href="?2.1">2.1: Deploy workloads on Azure virtual machines (VMs)</a></li>
-							<li><a href="?2.2">2.2: Create and manage a VM image or virtual hard disk</a></li>
-							<li><a href="?2.3">2.3: Perform configuration management</a></li>
-							<li><a href="?2.4">2.4: Configure VM networking</a></li>
-							<li><a href="?2.5">2.5: Scale VMs</a></li>
-							<li><a href="?2.6">2.6: Design and implement VM storage</a></li>
-							<li><a href="?2.7">2.7: Monitor VMs</a></li>
-							<li class="divider"></li>
-							<li role="presentation" class="dropdown-header">3: Design and implement cloud services</li>
-							<li><a href="?3.1">3.1: Design and develop a cloud service</a></li>
-							<li><a href="?3.2">3.2: Configure cloud services and roles</a></li>
-							<li><a href="?3.3">3.3: Deploy a cloud service</a></li>
-							<li><a href="?3.4">3.4: Monitor and debug a cloud service</a></li>
-                            -->
-							<li class="divider"></li>
-							<li role="presentation" class="dropdown-header">4: Design and implement a storage strategy</li>
-                            <!--
-							<li><a href="?4.1">4.1: Implement Azure Storage blobs and Azure files</a></li>
-							<li><a href="?4.2">4.2: Implement Azure Storage tables</a></li>
-                            -->
-							<li><a href="?4.3">4.3: Implement Azure storage queues</a></li>
-                            <!--
-							<li><a href="?4.4">4.4: Manage access</a></li>
-							<li><a href="?4.5">4.5: Monitor Storage</a></li>
-							<li><a href="?4.6">4.6: Implement SQL databases</a></li>
-							<li class="divider"></li>
-							<li role="presentation" class="dropdown-header">5: Manage application and network services</li>
-							<li><a href="?5.1">5.1: Integrate an app with Azure Active Directory</a></li>
-							<li><a href="?5.2">5.2: Configure a virtual network</a></li>
-							<li><a href="?5.3">5.3: Modify network configuration</a></li>
-							<li><a href="?5.4">5.4: Design and implement a communication strategy</a></li>
-							<li><a href="?5.5">5.5: Scale and monitor communication</a></li>
-							<li><a href="?5.6">5.6: Implement caching</a></li>
-							-->
-						</ul>
-					</li>
+                    <li><a href="#" onclick="location.reload()">Reset Test</a></li>
+                    <li><a href="?">Back to Objectives</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right social-nav">
                     <li>
@@ -152,21 +104,21 @@
                                 <a href="?1.2">Configure websites</a><br />
                                 Define and use app settings, connection strings, handlers, and virtual directories; configure certificates and custom domains; configure SSL bindings and runtime configurations; manage websites by using the API, Windows PowerShell, and Xplat-CLI
                             </p>
-                            <!--
                             <p>
-                                Configure diagnostics, monitoring, and analytics<br />
+                                <a href="?1.3">Configure diagnostics, monitoring, and analytics</a><br />
                                 Retrieve diagnostics data, view streaming logs, configure endpoint monitoring, configure alerts, configure diagnostics, use remote debugging, monitor website resources
                             </p>
                             <p>
-                                Implement web jobs<br />
+                                <a href="?1.4">Implement web jobs</a><br />
                                 Write web jobs using the SDK, package and deploy web jobs, schedule web jobs
                             </p>
                             <p>
-                                Configure websites for scale and resilience<br />
+                                <a href="?1.5">Configure websites for scale and resilience</a><br />
                                 Configure auto-scale using built-in and custom schedules, configure by metric, change the size of an instance, configure Traffic Manager
                             </p>
+                            <!--
                             <p>
-                                Design and implement applications for scale and resilience<br />
+                                <a href="?1.6">Design and implement applications for scale and resilience</a><br />
                                 Select a pattern, implement transient fault handling for services, respond to throttling, disable Application Request Routing (ARR) affinity
                             </p>
                             -->
@@ -209,7 +161,7 @@
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseObj4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingObj4">
+                    <div id="collapseObj4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj4">
                         <div class="panel-body">
                             <p>
                                 <a href="?4.3">Implement Azure storage queues</a><br />
@@ -324,7 +276,7 @@
                 <div>Questions: <span data-bind="text: questionCount"></span></div>
                 <div>Date: <span data-bind="text: calculatedScoreDate"></span></div>
                 <div>Overall Score: <span data-bind="text: calculatedScore"></span>%</div>
-                <div>Incorrect Questions: <span data-bind="text: totalQuestionsCorrect"></span></div>
+                <div>Correct Questions: <span data-bind="text: totalQuestionsCorrect"></span></div>
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-bind="attr: { 'aria-valuenow': calculatedScore }, style: { width: calculatedScore() + '%' }, css: { 'progress-bar-success': quizPassed, 'progress-bar-danger': !quizPassed() }"></div>
                 </div>

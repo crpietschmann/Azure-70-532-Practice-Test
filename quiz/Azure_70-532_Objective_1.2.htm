@@ -5,7 +5,7 @@
 	-->
 	<section class="question"> 
         <section class="text">
-            How are App Settings access from a .NET application?
+            How are App Settings accessed from a .NET application?
         </section>
         <section class="answer" data-correct>ConfigurationManager.AppSettings</section>
         <section class="answer">Environment Variables</section>
@@ -13,7 +13,7 @@
     </section>
     <section class="question"> 
         <section class="text">
-            How are App Settings access from a non .NET application, such as Node.js, Python, PHP or Java?
+            How are App Settings accessed from a non .NET application, such as Node.js, Python, PHP or Java?
         </section>
         <section class="answer">ConfigurationManager.AppSettings</section>
         <section class="answer" data-correct>Environment Variables</section>
@@ -21,7 +21,7 @@
     </section>
     <section class="question"> 
         <section class="text">
-        	You have the following C# code for retrieving an App Settings named "AnalyticsID" for use within the app. Line numbers are for reference only.<br/>
+        	You have the following C# code for retrieving an App Setting named "AnalyticsID" for use within the app. Line numbers are for reference only.<br/>
         	<pre>
         	1. using System;
         	2. using System.Configuration;
@@ -57,7 +57,7 @@
         	3. var connString = string.Empty</pre>
         	Choose which line of code to replace Line # 3 to make this snippet work as expected.
         </section>
-        <section class="answer"><code>var analyticsID = ConnectionStrings.myDatabase;</code></section>
+        <section class="answer"><code>var connString = ConnectionStrings.myDatabase;</code></section>
         <section class="answer" data-correct><code>var connString = ConfigurationManager.ConnectionStrings["myDatabase"].ConnectionString</code></section>
         <section class="answer"><code>var connString = process.env.SQLAZURECONNSTR_myDatabase;</code></section>
 		<section class="description"></section>
@@ -69,7 +69,7 @@
         	var connString = string.Empty</pre>
         	Choose which line of code can be used to make this snippet work as expected.
         </section>
-        <section class="answer"><code>var analyticsID = ConnectionStrings.myDatabase;</code></section>
+        <section class="answer"><code>var connString = ConnectionStrings.myDatabase;</code></section>
         <section class="answer"><code>var connString = process.env.SQLCONNSTR_myDatabase;</code></section>
         <section class="answer"><code>var connString = ConfigurationManager.ConnectionStrings["myDatabase"].ConnectionString</code></section>
         <section class="answer" data-correct><code>var connString = process.env.SQLAZURECONNSTR_myDatabase;</code></section>
@@ -118,7 +118,7 @@
         <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
         <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
         <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
-        <section class="answer">Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer">Navigate to the "Configure" blade of the Azure Web App</section>
         <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
         <section class="answer" data-correct>Click "Application settings" to open the Web app setting blade</section>
         <section class="answer" data-correct>Scroll down to the "App settings" section</section>
@@ -154,7 +154,7 @@
         <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
         <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
         <section class="answer" data-correct>Navigate to the blade for the Azure Web App</section>
-        <section class="answer">Navigate to the "Configure" tab of the Azure Web App</section>
+        <section class="answer">Navigate to the "Configure" blade of the Azure Web App</section>
         <section class="answer" data-correct>Click "All settings" link to open the Settings blade</section>
         <section class="answer" data-correct>Click "Application settings" to open the Web app setting blade</section>
         <section class="answer" data-correct>Scroll down to the "Connection strings" section</section>
@@ -234,6 +234,7 @@
             What are the steps for defining a Virtual Directory or Virtual Application mapping in the existing portal?
         </section>
         <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
+        <section class="answer">Navigate to the management portal at https://preview.azure.com</section>
         <section class="answer" data-correct>Navigate to the "Configure" tab of the Azure Web App</section>
         <section class="answer">Navigate to the "Virtual Directory and Apps" tab of the Azure Web App</section>
         <section class="answer" data-correct>Scroll down to the "virtual applications and directories" section</section>

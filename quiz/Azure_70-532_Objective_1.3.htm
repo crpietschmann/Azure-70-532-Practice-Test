@@ -1,4 +1,135 @@
-<section class="quiz" data-title="Developing Microsoft Azure Solutions (70-532) - Objective 1: Design and Implement Websites" data-subtitle="Objective 1.3: Configure diagnostics, monitoring and analytics">
+<section class="quiz" data-title="Design and Implement Websites" data-subtitle="Objective 1.3: Configure diagnostics, monitoring and analytics">
+    <section class="question">
+        <section class="text">
+            Which web server diagnostics logs can be enabled or disabled for a Web App?
+        </section>
+        <section class="answer" data-correct>Detailed Error Logging</section>
+        <section class="answer">All Request Tracing</section>
+        <section class="answer" data-correct>Failed Request Tracing</section>
+        <section class="answer" data-correct>Web Server Logging</section>
+        <section class="answer">DNS Resolution Error Logging</section>
+        <section class="description">
+            Source: <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is contained within the Detailed Error Log?
+        </section>
+        <section class="answer">HTTP transaction information saved in the W3C extended log file format.</section>
+        <section class="answer" data-correct>Information for HTTP status codes (400 or greater) that indicate a failure, plus additional information that may help determine what caused the server to return the error.</section>
+        <section class="answer">Trace of IIS components used to process requests with the time taken within each component.</section>
+        <section class="description">
+            Source: <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is contained within the Failed Request Tracing log?
+        </section>
+        <section class="answer" data-correct>Trace of IIS components used to process requests with the time taken within each component.</section>
+        <section class="answer">HTTP transaction information saved in the W3C extended log file format.</section>
+        <section class="answer">Information for HTTP status codes (400 or greater) that indicate a failure, plus additional information that may help determine what caused the server to return the error.</section>
+        <section class="description">
+            Source: <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is contained within the Web Server Logs?
+        </section>
+        <section class="answer">Information for HTTP status codes (400 or greater) that indicate a failure, plus additional information that may help determine what caused the server to return the error.</section>
+        <section class="answer">Trace of IIS components used to process requests with the time taken within each component.</section>
+        <section class="answer" data-correct>HTTP transaction information saved in the W3C extended log file format.</section>
+        <section class="description">
+            Source: <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is used to write to the Application diagnostics log from an ASP.NET application?
+        </section>
+        <section class="answer">log4net</section>
+        <section class="answer">Console.Write</section>
+        <section class="answer" data-correct>System.Diagnostics.Trace</section>
+        <section class="answer">System.Diagnostics.EventLog</section>
+        <section class="description">
+            <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is the physical location of the Log Files folder on the Web App server?
+        </section>
+        <section class="answer">D:\LogFiles</section>
+        <section class="answer" data-correct>D:\home\LogFiles</section>
+        <section class="answer">D:\inetpub\LogFiles</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which directory are the Application logs stored?
+        </section>
+        <section class="answer">/LogFiles/W3SVC#########/</section>
+        <section class="answer">/LogFiles/DetailedErrors/</section>
+        <section class="answer" data-correct>/LogFiles/Application/</section>
+        <section class="answer">/LogFiles/http/RawLogs</section>
+        <section class="answer">/LogFiles/Git</section>
+        <section class="description">
+            <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which directory are the Failed Request Traces stored?
+        </section>
+        <section class="answer" data-correct>/LogFiles/W3SVC#########/</section>
+        <section class="answer">/LogFiles/DetailedErrors/</section>
+        <section class="answer">/LogFiles/Application/</section>
+        <section class="answer">/LogFiles/http/RawLogs</section>
+        <section class="answer">/LogFiles/Git</section>
+        <section class="answer">
+            <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which directory are the Detailed Error Logs stored?
+        </section>
+        <section class="answer">/LogFiles/W3SVC#########/</section>
+        <section class="answer" data-correct>/LogFiles/DetailedErrors/</section>
+        <section class="answer">/LogFiles/Application/</section>
+        <section class="answer">/LogFiles/http/RawLogs</section>
+        <section class="answer">/LogFiles/Git</section>
+        <section class="answer">
+            <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which directory are the Web Server Logs stored?
+        </section>
+        <section class="answer">/LogFiles/W3SVC#########/</section>
+        <section class="answer">/LogFiles/DetailedErrors/</section>
+        <section class="answer">/LogFiles/Application/</section>
+        <section class="answer" data-correct>/LogFiles/http/RawLogs</section>
+        <section class="answer">/LogFiles/Git</section>
+        <section class="answer">
+            <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which directory are the Deployment Logs stored?
+        </section>
+        <section class="answer">/LogFiles/W3SVC#########/</section>
+        <section class="answer">/LogFiles/DetailedErrors/</section>
+        <section class="answer">/LogFiles/Application/</section>
+        <section class="answer">/LogFiles/http/RawLogs</section>
+        <section class="answer" data-correct>/LogFiles/Git</section>
+        <section class="answer">
+            <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-enable-diagnostic-log/</a>
+        </section>
+    </section>
     <!--
         - configure diagnostics
         - retrieve diagnostics data

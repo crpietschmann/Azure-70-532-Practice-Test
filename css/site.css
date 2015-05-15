@@ -4,3 +4,18 @@
 .question-pool .question .description img {
     width: 100%;
 }
+
+.social-nav .twitter-share-button {
+    margin-top: 1em;
+}
+
+#navbar.in .social-nav .twitter-share-button {
+    margin-left: 1em;
+}
+
+#jsQuizEngine > .quiz > h3, #jsQuizEngine > .score > h3 {
+    margin-top: 0;
+}
+#jsQuizEngine > .quiz > h5, #jsQuizEngine > .score > h5 {
+    margin-bottom: 0.25em;
+}

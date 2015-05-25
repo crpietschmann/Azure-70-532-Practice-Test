@@ -78,7 +78,7 @@ CloudQueue queue = queueClient.GetQueueReference("myqueue");</pre></section>
         <section class="answer" data-correct><pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
 CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 CloudQueue queue = queueClient.GetQueueReference("myqueue");
-queue.CreateIfNotEdists();</pre></section>
+queue.CreateIfNotExists();</pre></section>
         <section class="answer"><pre>CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSettings("storageConnectionString"));
 CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 CloudQueue queue = queueClient.CreateQueueReference("myqueue");

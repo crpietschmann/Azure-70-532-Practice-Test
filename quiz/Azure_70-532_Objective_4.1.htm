@@ -1,6 +1,13 @@
 <section class="quiz" data-title="Design and implement a storage strategy" data-subtitle="Implement Azure Storage blobs and Azure files">
     <section class="question">
         <section class="text">
+            Before Azure Storage Blobs or Files can be used, an Azure Storage Account must first be created.
+        </section>
+        <section class="answer" data-correct>True</section>
+        <section class="answer">False</section>
+    </section>
+    <section class="question">
+        <section class="text">
             What should you use for an Azure Storage solution that can access files via file system I/O APIs? 
         </section>
         <section class="answer">Blog storage</section>
@@ -11,7 +18,7 @@
     </section>
     <section class="question">
         <section class="text">
-            What URl format can Blobs be accessed from?
+            What URL format can Blobs be accessed from?
         </section>
         <section class="answer" data-correct>http://&lt;storage account&gt;.blob.core.windows.net/&lt;container&gt;/&lt;blob&gt;</section>
         <section class="answer">http://&lt;storage account&gt;.blob.core.windowsazure.net/&lt;container&gt;/&lt;blob&gt;</section>
@@ -19,6 +26,35 @@
         <section class="answer">http://&lt;storage account&gt;.core.windows.net/&lt;container&gt;/&lt;blob&gt;</section>
         <section class="description">
             Source: <a href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/">http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-blobs/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What URL format are Azure File Storage accessed from?
+        </section>
+        <section class="answer">https://&lt;storage account&gt;.blob.core.windows.net/&lt;share&gt;/&lt;directory&gt;/&lt;file&gt;</section>
+        <section class="answer" data-correct>https://&lt;storage account&gt;.file.core.windows.net/&lt;share&gt;/&lt;directory&gt;/&lt;file&gt;</section>
+        <section class="answer">Azure File Storage can not be accessed via URL.</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Azure File Storage allows for applications to have shared storage using the SMB 2.1 protocol.
+        </section>
+        <section class="answer" data-correct>True</section>
+        <section class="answer">False</section>
+        <section class="description">
+            Source: <a href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-files/">http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-files/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Azure File Storage data can be accessed from an on-premises application using the following:
+        </section>
+        <section class="answer">Mount Azure File Storage to a local Drive letter</section>
+        <section class="answer" data-correct>Using the Azure File Storage API</section>
+        <section class="description">
+            <blockquote>However, you cannot mount the file share from an on-premises application. To access share data from an on-premises application, you must use the File storage API.</blockquote><br/>
+            Source: <a href="http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-files/#create-an-azure-storage-account-1">http://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-files/#create-an-azure-storage-account-1</a>
         </section>
     </section>
     <!--

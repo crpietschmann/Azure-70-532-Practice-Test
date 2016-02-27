@@ -30,7 +30,7 @@ footer {
   border-top: dashed 0.1em transparent;
 }
 .question-pool .question .answer[data-correct].highlight {
-  background-color: rgba(0, 128, 0, 0.05);
+  background-color: rgba(70, 197, 65, 0.35);
   border-color: #008000;
 }
 .question-pool .question .answer:hover {

@@ -1,7 +1,7 @@
-<section class="quiz" data-title="Design and Implement Websites" data-subtitle="Objective 1.1: Deploy Websites">
+<section class="quiz" data-title="Design and Implement Web Apps" data-subtitle="Objective 1.1: Deploy Web Apps">
     <section class="question">
         <section class="text">
-            When creating an Azure website, a production deployment slot is automatically provisioned that represents your live website.
+            When creating an Azure Web App, a production deployment slot is automatically provisioned that represents your live Web App.
         </section>
         <section class="answer" data-correct>True</section>
         <section class="answer">False</section>
@@ -24,7 +24,7 @@
         <section class="text">
             Which deployment scenario does the following describe?<br/>
 			<br/>
-			Deploy to a non-production slot to test whether the website is working as expected. Then after you are satisfied with testing, you swap this slot with the production slot making the contents of this slot the new production website.
+			Deploy to a non-production slot to test whether the Web App is working as expected. Then after you are satisfied with testing, you swap this slot with the production slot making the contents of this slot the new production Web App.
         </section>
         <section class="answer" data-correct>Staged</section>
         <section class="answer">Incremental</section>
@@ -35,7 +35,7 @@
         <section class="text">
             Which deployment scenario does the following describe?<br/>
 			<br/>
-			After swapping a non-production slot into production you notice something wrong with the website, so you swap the production slot again to put the old contents back into production.
+			After swapping a non-production slot into production you notice something wrong with the Web App, so you swap the production slot again to put the old contents back into production.
         </section>
         <section class="answer">Staged</section>
         <section class="answer">Incremental</section>
@@ -46,7 +46,7 @@
         <section class="text">
             Which deployment scenario does the following describe?<br/>
 			<br/>
-			Your website requires you to make some changed post deployment. You deploy to a non-production slot so you can first make those changes before finally swapping with the production slot.
+			Your Web App requires you to make some changed post deployment. You deploy to a non-production slot so you can first make those changes before finally swapping with the production slot.
         </section>
         <section class="answer">Staged</section>
         <section class="answer" data-correct>Incremental</section>
@@ -55,19 +55,19 @@
     </section>
 	<section class="question">
         <section class="text">
-            Where are all deployment slots for the same website hosted?
+            Where are all deployment slots for the same Web App hosted?
         </section>
         <section class="answer">Within a separate virtual machine (VM) instance as the Production deployment slot</section>
         <section class="answer">Within the same physical machine as the Production deployment slot</section>
 		<section class="answer" data-correct>Within the same virtual machine (VM) instance as the Production deployment slot</section>
 		<section class="answer">Within a separate physical machine as the Production deployment slot</section>
 		<section class="description">
-			All deployment slots for the same website are hosted within the same Virtual Machine (VM). This is especially important to remember when stress testing a non-production deployment slot prior to swapping it into production. A significant amount of load on a non-production deployment slot can affect the performance of the live, production website.
+			All deployment slots for the same Web App are hosted within the same Virtual Machine (VM). This is especially important to remember when stress testing a non-production deployment slot prior to swapping it into production. A significant amount of load on a non-production deployment slot can affect the performance of the live, production Web App.
 		</section>
     </section>
 	<section class="question">
         <section class="text">
-            All the website content is swapped when swapping deployment slots.
+            All the Web App content is swapped when swapping deployment slots.
         </section>
         <section class="answer" data-correct>True</section>
         <section class="answer">False</section>
@@ -75,7 +75,7 @@
     </section>
 	<section class="question">
         <section class="text">
-            Along with swapping website content when deployment slots are swapped, which configurations are moved to the destination slot?<br/>
+            Along with swapping Web App content when deployment slots are swapped, which configurations are moved to the destination slot?<br/>
 			<br/>
 			<em>Select all that apply</em>
         </section>
@@ -92,7 +92,7 @@
     </section>
 	<section class="question">
         <section class="text">
-            Along with swapping website content when deployment slots are swapped, which configurations are not moved to the destination slot?<br/>
+            Along with swapping Web App content when deployment slots are swapped, which configurations are not moved to the destination slot?<br/>
 			<br/>
 			<em>Select all that apply</em>
         </section>
@@ -109,27 +109,27 @@
     </section>
 	<section class="question">
         <section class="text">
-            Two websites can not share the same web hosting plan.
+            Two Web Apps can not share the same web hosting plan.
         </section>
         <section class="answer">True</section>
         <section class="answer" data-correct>False</section>
 		<section class="description">
-			Two websites are able to share the same hosting plan, as long as they are created within the same region, resource group and subscription.
+			Two Web Apps are able to share the same hosting plan, as long as they are created within the same region, resource group and subscription.
 		</section>
     </section>
     <section class="question">
         <section class="text">
-            Does the existing Azure portal support migrating a website between hosting plans?
+            Does the Classic Azure Portal support migrating a Web Apps between hosting plans?
         </section>
         <section class="answer">True</section>
         <section class="answer" data-correct>False</section>
 		<section class="description">
-			The existing Azure portal does not support migrating websites between hosting plans.
+			The existing Azure portal does not support migrating Web Apps between hosting plans.
 		</section>
     </section>
     <section class="question">
         <section class="text">
-            Does the preview Azure portal support migrating a website between hosting plans?
+            Does the Azure Portal support migrating a Web Apps between hosting plans?
         </section>
         <section class="answer" data-correct>True</section>
         <section class="answer">False</section>
@@ -138,18 +138,18 @@
     </section>
     <section class="question">
         <section class="text">
-            You create a new Azure Web App / Website with the URL prefix of "my-amazing-app". What is the domain / url where the application is accessible from?
+            You create a new Azure Web App with the URL prefix of "my-amazing-app". What is the domain / url where the application is accessible from?
         </section>
         <section class="answer">my-amazing-app.azure.com</section>
         <section class="answer" data-correct>my-amazing-app.azurewebsites.net</section>
         <section class="answer">my-amazing-app.windowsazure.com</section>
 		<section class="description">
-			When Azure Web Apps / Websits are created they are automatically configured with a ".azurewebsites.net" domain name endpoint.
+			When Azure Web Apps are created they are automatically configured with a ".azurewebsites.net" domain name endpoint.
 		</section>
     </section>
     <section class="question">
         <section class="text">
-            What are the steps for creating a new Azure Website / Web App in the existing portal?
+            What are the steps for creating a new Azure Web App in the Classic Azure Portal?
         </section>
         <section class="answer" data-correct>Navigate to the management portal at https://manage.windowsazure.com</section>
         <section class="answer">Navigate to the management portal at https://portal.azure.com</section>
@@ -165,7 +165,7 @@
     </section>
     <section class="question">
         <section class="text">
-            What are the steps for creating a new Azure Website / Web App in the preview portal?
+            What are the steps for creating a new Azure Web App in the preview portal?
         </section>
         <section class="answer" data-correct>Navigate to the management portal at https://portal.azure.com</section>
         <section class="answer">Navigate to the management portal at https://manage.windowsazure.com</section>
@@ -182,7 +182,7 @@
     </section>
 	<section class="question">
         <section class="text">
-            What are the steps for migrating an existing Azure Website / Web App between App Service Plans within the preview portal?
+            What are the steps for migrating an existing Azure Web App between App Service Plans within the preview portal?
         </section>
         <section class="answer" data-correct>Navigate to the Web App blade within the portal at https://portal.azure.com</section>
         <section class="answer">Navigate to the Web App blade within the portal at https://manage.windowsazure.com</section>
@@ -197,7 +197,7 @@
     </section>
 	<section class="question">
         <section class="text">
-            What are the 4 Azure Website Service Tiers available?
+            What are the 4 Azure Web App Service Tiers available?
         </section>
         <section class="answer" data-correct>Free</section>
 		<section class="answer">Community</section>
@@ -207,7 +207,7 @@
 		<section class="answer" data-correct>Standard</section>
 		<section class="answer">Enterprise</section>
 		<section class="description">
-			The Service Tiers are: Free, Shared, Basic and Standard.<br/>
+			The Service Tiers for Azure App Service Web Apps are: Free, Shared, Basic and Standard.<br/>
 			<a href="http://azure.microsoft.com/en-us/pricing/details/websites/" target="_blank">http://azure.microsoft.com/en-us/pricing/details/websites/</a>
 		</section>
     </section>

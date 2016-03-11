@@ -1,6 +1,6 @@
 <section class="quiz" data-title="Design and Implement Web Apps" data-subtitle="Objective 1.5: Configure websites for scale and resilience">
     <section class="question">
-        <section class="textd">
+        <section class="text">
             Azure guarantees an SLA of 99.9% for all Web Apps hosted, regardless of the number of instances.
         </section>
         <section class="answer" data-correct>True</section>
@@ -9,10 +9,36 @@
             Source: <a href="http://azure.microsoft.com/en-us/support/legal/sla/">http://azure.microsoft.com/en-us/support/legal/sla/</a>
         </section>
     </section>
+    <!-- Configure Auto-Scaling by Metric -->
+    <section class="question">
+        <section class="text">
+           Which performance metrics are supported for triggering Web App Auto-Scaling?
+        </section>
+        <section class="answer">CPU Percentage</section>
+        <section class="answer">Memory Percentage</section>
+        <section class="answer">Disk Queue Length</section>
+        <section class="answer">HTTP Queue Length</section>
+        <section class="answer">Data In</section>
+        <section class="answer">Data Out</section>
+        <section class="answer" data-correct>All the above</section>
+        <section class="description">
+            
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Once an App Service Web App has been created, how can the VM Size (CPU and Memory) be changed for the VM's that host the Web App?
+        </section>
+        <section class="answer">The Web App must be deleted, then re-created.</section>
+        <section class="answer">Adjust the CPU core count and/or Memeory capacity of the VM to the desired amount.</section>
+        <section class="answer" data-correct>Change the Pricing Tier for the Web App to the one with the desired CPU/Memory resources.</section>
+        <section class="description">
+            
+        </section>
+    </section>
     
     <!--
         - configuring auto-scaling using built-in and custom schedules
-        - configure auto-scaling by metric
         - change the size fo an instance
         - configure traffic manager
     -->

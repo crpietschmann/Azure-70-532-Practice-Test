@@ -1,6 +1,6 @@
 <section class="quiz" data-title="Design and Implement Web Apps" data-subtitle="Objective 1.5: Configure websites for scale and resilience">
     <section class="question">
-        <section class="textd">
+        <section class="text">
             Azure guarantees an SLA of 99.9% for all Web Apps hosted, regardless of the number of instances.
         </section>
         <section class="answer" data-correct>True</section>
@@ -9,11 +9,86 @@
             Source: <a href="http://azure.microsoft.com/en-us/support/legal/sla/">http://azure.microsoft.com/en-us/support/legal/sla/</a>
         </section>
     </section>
-    
+    <!-- Configure Auto-Scaling by Metric -->
+    <section class="question">
+        <section class="text">
+           Which performance metrics are supported for triggering Web App Auto-Scaling?
+        </section>
+        <section class="answer">CPU Percentage</section>
+        <section class="answer">Memory Percentage</section>
+        <section class="answer">Disk Queue Length</section>
+        <section class="answer">HTTP Queue Length</section>
+        <section class="answer">Data In</section>
+        <section class="answer">Data Out</section>
+        <section class="answer" data-correct>All the above</section>
+        <section class="description">
+            
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Once an App Service Web App has been created, how can the VM Size (CPU and Memory) be changed for the VM's that host the Web App?
+        </section>
+        <section class="answer">The Web App must be deleted, then re-created.</section>
+        <section class="answer">Adjust the CPU core count and/or Memeory capacity of the VM to the desired amount.</section>
+        <section class="answer" data-correct>Change the Pricing Tier for the Web App to the one with the desired CPU/Memory resources.</section>
+        <section class="description">
+            
+        </section>
+    </section>
+    <!-- configure traffic manager -->
+    <section class="question">
+        <section class="text">
+            How is Traffic Manager implemented to route Web App traffic to an appropriate website endpoint?
+        </section>
+        <section class="answer">It acts as a Proxy where all website traffic flows through, then gets routed to the correct endpoint.</section>
+        <section class="answer" data-correct>It's configured at the DNS level, so that DNS resolution directs which endpoint to route traffic to.</section>
+        <section class="description">
+            
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which methods does Traffic Manager support for implementing Load Balancing?
+        </section>
+        <section class="answer">Automatic</section>
+        <section class="answer" data-correct>Round Robin</section>
+        <section class="answer" data-correct>Failover</section>
+        <section class="answer" data-correct>Performance</section>
+        <secftion class="description">
+            
+        </secftion>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is Failover Load Balancing?
+        </section>
+        <section class="answer">Once a request fails on an endpoing, it is then automatically redirected to a different endpoing.</section>
+        <section class="answer" data-correct>Traffic is directed to Healthy endpoints as the result of monitoring, so that traffic is not directed to a server that is in a state of failure.</section>
+        <section class="description">
+            
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is Round Robin Load Balancing?
+        </section>
+        <section class="answer" data-correct>Each traffic request is directed to the next endpoint in the list of endpoints so traffic is evenly distrubuted across all endpoints.</section>
+        <section class="answer">Traffic is randomly distributed to endpoints so traffic is evenly distributed across all endpoings.</section>
+        <section class="description">
+            
+        </section>
+    </section>
+    <section class="qeustion">
+        <section class="text">
+            How is Performance Load Balancing performed?
+        </section>
+        <section class="answer">Traffic is routed to the endpoint with the VM that has the most available CPU/Memory available.</section>
+        <section class="answer" data-correct>Traffic is routed via DNS to the "closest" endpoint based on the lowest latency between the client and the Azure Data Center hosting the endpoint.</section>
+        <section class="answer">Traffic is routed via DNS to the endpoint with the fastest response times.</section>
+    </section>
     <!--
         - configuring auto-scaling using built-in and custom schedules
-        - configure auto-scaling by metric
         - change the size fo an instance
-        - configure traffic manager
     -->
 </section>

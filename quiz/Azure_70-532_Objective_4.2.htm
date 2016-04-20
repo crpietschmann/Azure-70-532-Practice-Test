@@ -1,4 +1,38 @@
 <section class="quiz" data-title="Design and implement a storage strategy" data-subtitle="Implement Azure storage tables">
+<<<<<<< HEAD
+=======
+    <section class="question">
+        <section class="text">
+            You have an Azure Storage account named "superstore" and you create a new Storage Table named "bigtable".<br/>
+            What is the URL to access the newly created Storage Table?
+        </section>
+        <section class="answer">http://superstore.table.azurestorage.net/bigtable</section>
+        <section class="answer">http://superstore.azurestorage.net/table/bigtable</section>
+        <section class="answer">http://superstore.storage.core.windows.net/table/bigtable</section>
+        <section class="answer" data-correct>http://superstore.table.core.windows.net/bigtable</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What kind of NoSQL store are Azure Table Storage?
+        </section>
+        <section class="answer">Document database</section>
+        <section class="answer">Graph database</section>
+        <section class="answer" data-correct>Key-Value pair</section>
+        <section class="answer">Table with Columns</section>
+        <section class="description">
+            Azure Storage Tables is a NoSQL data store that uses Key-Value pair to store data using a partition key to assist with scaling out the distribution of data.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What format is used for Azure Storage Connection Strings used to connecting to Azure Storage Tables?
+        </section>
+        <section class="answer" data-correct>DefaultEndpointsProtocol=https;AccountName={storage account name};AccountKey={account key}</section>
+        <section class="answer">DefaultEndpointsProtocol=ssl;AccountName={storage account name};AccountKey={account key}</section>
+        <section class="answer">DefaultEndpointsProtocol=https;StorageAccountName={storage account name};Key={account key}</section>
+        <section class="answer">DefaultEndpointsProtocol=ssl;StorageAccountName={storage account name};Key={account key}</section>
+    </section>
+>>>>>>> master
     <!--
         - Implement CRUD with and without transactions
         - design and manage partitions

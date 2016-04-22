@@ -19,3 +19,13 @@
 #jsQuizEngine > .quiz > h5, #jsQuizEngine > .score > h5 {
     margin-bottom: 0.25em;
 }
+
+#titleScreen > .jumbotron {
+    background: #00abec url(hero.png) no-repeat;
+}
+
+#titleScreen > .jumbotron p {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.25em 0.5em;
+    border-radius: 0.5em;
+}

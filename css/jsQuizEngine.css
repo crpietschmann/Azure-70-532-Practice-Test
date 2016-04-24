@@ -38,6 +38,7 @@ footer {
 }
 .question-pool .question .description {
   display: none;
+  margin-top: 1em;
 }
 .score .pass-indicator h1 {
   font-size: 10em;

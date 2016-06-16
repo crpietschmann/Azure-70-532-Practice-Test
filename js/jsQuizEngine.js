@@ -116,7 +116,7 @@
         self.calculatedScore = ko.observable(0);
         self.calculatedScoreDate = ko.observable('');
         self.quizPassed = ko.computed(function () {
-            return self.calculatedScore() >= 50;
+            return self.calculatedScore() >= 70;
         });
     };
 

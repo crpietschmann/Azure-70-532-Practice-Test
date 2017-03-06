@@ -31,6 +31,8 @@
                     answers = question.find('.answer'),
                     correctAnswerCount = question.find('.answer[data-correct]').length;
 
+                question.find('.hint a, .description a').attr('target','_blank');
+
                 answers.each(function (ai, ae) {
                     var answer = $(this),
                         newAnswer = $('<label></label>').addClass('answer').append('<input type=\'checkbox\'/>').append($('<div></div>').html(answer.html()));

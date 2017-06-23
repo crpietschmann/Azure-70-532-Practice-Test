@@ -1,4 +1,4 @@
-<section class="quiz" data-title="Design and Implement Web Apps" data-subtitle="Objective 1.1: Deploy Web Apps">
+<section class="quiz" data-title="Design and implement Azure PaaS compute and web and mobile services" data-subtitle="Deploy Azure App Service Web Apps">
     <section class="question">
         <section class="text">
             When creating an Azure Web App, a production deployment slot is automatically provisioned that represents your live Web App.
@@ -163,4 +163,489 @@
 			<a href="http://azure.microsoft.com/en-us/pricing/details/websites/" target="_blank">http://azure.microsoft.com/en-us/pricing/details/websites/</a>
 		</section>
     </section>
+
+    <!-- 
+	Azure PowerShell 101 - Managing (and debugging) Azure Web Apps
+	http://channel9.msdn.com/Shows/Azure-Friday/Azure-PowerShell-101-Managing-and-debugging-Azure-WebSites
+	-->
+	<section class="question"> 
+        <section class="text">
+            How are App Settings accessed from a .NET application?
+        </section>
+        <section class="answer" data-correct>ConfigurationManager.AppSettings</section>
+        <section class="answer">Environment Variables</section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+            How are App Settings accessed from a non .NET application, such as Node.js, Python, PHP or Java?
+        </section>
+        <section class="answer">ConfigurationManager.AppSettings</section>
+        <section class="answer" data-correct>Environment Variables</section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following C# code for retrieving an App Setting named "AnalyticsID" for use within the app. Line numbers are for reference only.<br/>
+        	<pre>
+        	1. using System;
+        	2. using System.Configuration;
+        	[...]
+        	3. var analyticsID = string.Empty</pre>
+        	Choose which line of code to replace Line # 3 to make this snippet work as expected.
+        </section>
+        <section class="answer"><code>var analyticsID = AppSettings.AnalyticsID;</code></section>
+        <section class="answer"><code>var analyticsID = process.env.AnalyticsID;</code></section>
+        <section class="answer" data-correct><code>var analyticsID = ConfigurationManager.AppSettings["AnalyticsID"];</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following Node.js code for retrieving an App Settings named "AnalyticsID" for use within the app.<br/>
+        	<pre>
+        	var analyticsID = "";</pre>
+        	Which 2 lines of code could be used to access the App Setting value? Each presents a complete solution.
+        </section>
+        <section class="answer"><code>var analyticsID = AppSettings.AnalyticsID;</code></section>
+        <section class="answer" data-correct><code>var analyticsID = process.env.AnalyticsID;</code></section>
+        <section class="answer"><code>var analyticsID = ConfigurationManager.AppSettings["AnalyticsID"];</code></section>
+        <section class="answer" data-correct><code>var analyticsID = process.env.APPSETTING_AnalyticsID;</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following C# code for retrieving a Connection String for a SQL Azure database named "myDatabase" for use within the app. Line numbers are for reference only.<br/>
+        	<pre>
+        	1. using System;
+        	2. using System.Configuration;
+        	[...]
+        	3. var connString = string.Empty</pre>
+        	Choose which line of code to replace Line # 3 to make this snippet work as expected.
+        </section>
+        <section class="answer"><code>var connString = ConnectionStrings.myDatabase;</code></section>
+        <section class="answer" data-correct><code>var connString = ConfigurationManager.ConnectionStrings["myDatabase"].ConnectionString</code></section>
+        <section class="answer"><code>var connString = process.env.SQLAZURECONNSTR_myDatabase;</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	You have the following Node.js code for retrieving a Connection String for a SQL Azure database named "myDatabase" for use within the app.<br/>
+        	<pre>
+        	var connString = string.Empty</pre>
+        	Choose which line of code can be used to make this snippet work as expected.
+        </section>
+        <section class="answer"><code>var connString = ConnectionStrings.myDatabase;</code></section>
+        <section class="answer"><code>var connString = process.env.SQLCONNSTR_myDatabase;</code></section>
+        <section class="answer"><code>var connString = ConfigurationManager.ConnectionStrings["myDatabase"].ConnectionString</code></section>
+        <section class="answer" data-correct><code>var connString = process.env.SQLAZURECONNSTR_myDatabase;</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	For a non .NET app, which prefix is used for accessing a Connection String for a SQL Azure database from the Environment Variables?
+        </section>
+        <section class="answer"><code>SQLCONNSTR_</code></section>
+        <section class="answer" data-correct><code>SQLAZURECONNSTR_</code></section>
+        <section class="answer"><code>MYSQLCONNSTR_</code></section>
+        <section class="answer"><code>CUSTOM_CONNSTR_</code></section>
+		<section class="description"></section>
+    </section>
+    <section class="question"> 
+        <section class="text">
+        	Both Connection Strings and App Settings can be modified when accessed from application code?
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+		<section class="description">
+			App Settings and Connection Strings are read-only when accessed from application code. To modify their values, you must either use the Management Portal, Azure Management API, Azure Powershell, or Xplat-CLI.
+		</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            When configuring Request Handlers, what format is required for the Processor Path?
+        </section>
+        <section class="answer">Relative - <code>\bin\php\php-cgi.exe</code></section>
+        <section class="answer" data-correct>Absolute - <code>C:\inetpub\wwwroot\bin\php\php-cgi.exe</code></section>
+        <section class="answer">Any of the above</section>
+        <section class="description">
+            The Processor Path is required to be an Absolute path.<br/>
+            <br/>
+            If the directory the processor you're using is located is:<br/>
+            <code>C:\intepub\wwwroot\bin\php</code><br/>
+            Then the Processor Path must be like the following:<br/>
+            <code>C:\inetpub\wwwroot\bin\php\php-cgi.exe</code>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            When using the PHP support built in to Azure Web Apps, do you need to manually configure the PHP Request Handler mapping?
+        </section>
+        <section class="answer">Yes</code></section>
+        <section class="answer" data-correct>No</section>
+        <section class="description">
+            No, the only time you need to configure the PHP request handler mapping would be if you are using a different PHP runtime that the one included with Azure.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Only a single Application can be hosted within a Web App. Multiple Web Apps need to be created to host multiple applications.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description">
+            Yes, Multiple applications can be hosted within a single Web App by configuring a Virtual Directory for each as an Application within the "Virtual Applications and Directories" configuration.<br/>
+            A direct analogy to this are Virtual Applications within IIS. In fact, Web Apps on Azure are hosted using IIS web server behind the scenes.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What DNS record type is set when mapping a Custom Domain to be an alias for the default {sitename}.azurewebsites.net domain name assigned to a Web App by Azure?
+        </section>
+        <section class="answer">A</section>
+        <section class="answer" data-correct>CNAME</section>
+        <section class="answer">MX</section>
+        <section class="answer">TXT</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What DNS record type is set when mapping the IP Address for a Web App to a Custom Domain?
+        </section>
+        <section class="answer" data-correct>A</section>
+        <section class="answer">CNAME</section>
+        <section class="answer">MX</section>
+        <section class="answer">TXT</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            The DNS records for your Web App are managed directly within the Application Settings in Azure.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which App Service Pricing Plans support Custom Domains?
+        </section>
+        <section class="answer">Free</section>
+        <section class="answer" data-correct>Shared</section>
+		<section class="answer" data-correct>Basic</section>
+		<section class="answer" data-correct>Standard</section>
+		<section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Before mapping a Custom Domain to the "my-amazing-app" Web App using a DNS alias to the IP Address, the custom domain name needs to have a CNAME record created with what value?
+        </section>
+        <section class="answer">verify.azurewebsites.net</section>
+        <section class="answer">awverify.azurewebsites.net</section>
+        <section class="answer">verify.my-amazing-app.azurewebsites.net</section>
+        <section class="answer" data-correct>awverify.my-amazing-app.azurewebsites.net</section>
+        <section class="description">
+            Setting up a CNAME record of "awverify.{sitename}.azurewebsites.net" (substitute the "{sitename}" with the name of the Azure Web App) within the DNS of the Custom Domain lets Azure verify that you either own or otherwise have control over the domain name.<br/>
+            This CNAME record must be created on the Custom Domain name prior to setting up the Custom Domain within the Azure Web App configuration.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map just the root domain of "fabrikam.com" to the Azure Web App by IP Address, what DNS record and settings need to be created?
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>www</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map the root domain of "fabrikam.com" and all it's subdomains to the Azure Web App by IP Address, what DNS record and settings need to be created?
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>A</strong><br/>
+            Record Name: <strong>www</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map the root domain of "fabrikam.com" and all it's subdomains to the Azure Web App by alias, what DNS record and settings need to be created?
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>IP Address of Azure Web App</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            To map just the domain of "www.fabrikam.com" to the Azure Web App by alias, what DNS record and settings need to be created?
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>@</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer">
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>*</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="answer" data-correct>
+            Record Type: <strong>CNAME</strong><br/>
+            Record Name: <strong>www</strong><br/>
+            Record Value: <strong>{sitename}.azurewebsites.net</strong>
+        </section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What events will cause the IP Address assigned to the Web App to change?
+        </section>
+        <section class="answer" data-correct>If the App Service Pricing Plan is changed to Free</section>
+        <section class="answer" data-correct>If SSL is enabled with "IP Based SSL" option</section>
+        <section class="answer">If a new Custom Domain is added</section>
+        <section class="answer" data-correct>If the Web App is Deleted and then Re-Create</section>
+        <section class="answer">When new code is deployed</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            When using a Custom Domain with a Web App, Azure will automatically update the DNS records if IP Address or Web App configurations change.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description">
+            Any DNS changes must be made manually. Azure does not have functionality to change the DNS records automatically.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Azure Web Apps automatically support SSL / TLS for the "{sitename}.azurewebsites.net" domain name.
+        </section>
+        <section class="answer" data-correct>True</section>
+        <section class="answer">False</section>
+        <section class="description">
+            Azure Web Apps have SSL support build in for the "*.azurewebsites.net" domain name. You only need to configure SSL if you wish to use it with a Custom Domain.
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which App Service Pricing Plans support SSL?
+        </section>
+        <section class="answer">Free</section>
+        <section class="answer">Shared</section>
+		<section class="answer" data-correct>Basic</section>
+		<section class="answer" data-correct>Standard</section>
+		<section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Azure Web Apps only support IP Address based SSL connections.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description">
+            Azure Web Apps actually support 2 types of SSL connections:<br/>
+            <blockquote>Azure Websites supports two types of SSL connections: Server Name Indication (SNI) SSL Connections and IP Address SSL Connections. SNI-based SSL works on modern browsers while IP-based SSL works on all browsers.</blockquote>
+            Source: <a href="http://azure.microsoft.com/en-us/pricing/details/websites/">http://azure.microsoft.com/en-us/pricing/details/websites/</a>
+        </section>
+    </section>
+    <!--
+    Need to write questions on:
+        - Configure Certificates
+        - Configuring SSL bindings
+    -->
+
+
+    <section class="question">
+        <section class="text">
+            WebJobs enable background processing to be performed using a .NET windows service.
+        </section>
+        <section class="answer">True</section>
+        <section class="answer" data-correct>False</section>
+        <section class="description">
+            WebJobs enable console apps or scripts to be run.<br/>
+            <br/>
+            Source: <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-create-web-jobs/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-create-web-jobs/</a>
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            WebJobs can be written in:
+        </section>
+        <section class="answer" data-correct>.NET</section>
+        <section class="answer" data-correct>PowerShell</section>
+        <section class="answer" data-correct>Bash</section>
+        <section class="answer" data-correct>PHP</section>
+        <section class="answer" data-correct>Python</section>
+        <section class="answer" data-correct>Node.js</section>
+        <section class="answer" data-correct>Java</section>
+        <section class="description">
+            Source: <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-create-web-jobs/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-create-web-jobs/</a>
+        </section>
+    </section>
+    
+    
+    <section class="question">
+        <section class="text">
+            WebJobs can be scheduled to be run:
+        </section>
+        <section class="answer">on-demand</section>
+        <section class="answer">continuously</section>
+        <section class="answer">on a scheduled</section>
+        <section class="answer" data-correct>all of the above</section>
+        <section class="description">
+            Source: <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-create-web-jobs/">http://azure.microsoft.com/en-us/documentation/articles/web-sites-create-web-jobs/</a>
+        </section>
+    </section>
+    <!--
+        - create WebJobs
+        - Package and deployment
+        - schedule WebJobs 
+    -->
+
+
+    <section class="question">
+        <section class="text">
+            Azure guarantees an SLA of 99.9% for all Web Apps hosted, regardless of the number of instances.
+        </section>
+        <section class="answer" data-correct>True</section>
+        <section class="answer">False</section>
+        <section class="description">
+            Source: <a href="http://azure.microsoft.com/en-us/support/legal/sla/">http://azure.microsoft.com/en-us/support/legal/sla/</a>
+        </section>
+    </section>
+    <!-- Configure Auto-Scaling by Metric -->
+    <section class="question">
+        <section class="text">
+           Which performance metrics are supported for triggering Web App Auto-Scaling?
+        </section>
+        <section class="answer">CPU Percentage</section>
+        <section class="answer">Memory Percentage</section>
+        <section class="answer">Disk Queue Length</section>
+        <section class="answer">HTTP Queue Length</section>
+        <section class="answer">Data In</section>
+        <section class="answer">Data Out</section>
+        <section class="answer" data-correct>All the above</section>
+        <section class="description">
+            
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Once an App Service Web App has been created, how can the VM Size (CPU and Memory) be changed for the VM's that host the Web App?
+        </section>
+        <section class="answer">The Web App must be deleted, then re-created.</section>
+        <section class="answer">Adjust the CPU core count and/or Memeory capacity of the VM to the desired amount.</section>
+        <section class="answer" data-correct>Change the Pricing Tier for the Web App to the one with the desired CPU/Memory resources.</section>
+        <section class="description">
+            
+        </section>
+    </section>
+    <!-- configure traffic manager -->
+    <section class="question">
+        <section class="text">
+            How is Traffic Manager implemented to route Web App traffic to an appropriate website endpoint?
+        </section>
+        <section class="answer">It acts as a Proxy where all website traffic flows through, then gets routed to the correct endpoint.</section>
+        <section class="answer" data-correct>It's configured at the DNS level, so that DNS resolution directs which endpoint to route traffic to.</section>
+        <section class="description">
+            
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which methods does Traffic Manager support for implementing Load Balancing?
+        </section>
+        <section class="answer">Automatic</section>
+        <section class="answer" data-correct>Round Robin</section>
+        <section class="answer" data-correct>Failover</section>
+        <section class="answer" data-correct>Performance</section>
+        <secftion class="description">
+            
+        </secftion>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is Failover Load Balancing?
+        </section>
+        <section class="answer">Once a request fails on an endpoint, it is then automatically redirected to a different endpoint.</section>
+        <section class="answer" data-correct>Traffic is directed to Healthy endpoints as the result of monitoring, so that traffic is not directed to a server that is in a state of failure.</section>
+        <section class="description">
+            
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What is Round Robin Load Balancing?
+        </section>
+        <section class="answer" data-correct>Each traffic request is directed to the next endpoint in the list of endpoints so traffic is evenly distrubuted across all endpoints.</section>
+        <section class="answer">Traffic is randomly distributed to endpoints so traffic is evenly distributed across all endpoints.</section>
+        <section class="description">
+            
+        </section>
+    </section>
+    <section class="question">
+        <section class="text">
+            How is Performance Load Balancing performed?
+        </section>
+        <section class="answer">Traffic is routed to the endpoint with the VM that has the most available CPU/Memory available.</section>
+        <section class="answer" data-correct>Traffic is routed via DNS to the "closest" endpoint based on the lowest latency between the client and the Azure Data Center hosting the endpoint.</section>
+        <section class="answer">Traffic is routed via DNS to the endpoint with the fastest response times.</section>
+    </section>
+    <!--
+        - configuring auto-scaling using built-in and custom schedules
+        - change the size fo an instance
+    -->
+
 </section>

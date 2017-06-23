@@ -84,122 +84,62 @@
                 </p>
             </div>
 
+            <div class="alert alert-info" role="alert"><strong>Update in Progress!</strong> The practice test questions are currently being updated for the latest exam objectives update. As a result, many of the practice questions were removed that didn't apply to the new exam objective changes. You can use the questions that do remain here to help you study, and hopefully I'll get new questions added soon for areas that aren't covered yet. Thanks! -- Chris Pietschmann</div>
+
             <h2>Choose practice test to take:</h2>
             <div id="objaccordian" class="panel-group" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingObj1">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseObj1" aria-expanded="true" aria-controls="collapseObj1">
-                                Design and implement Web Apps (15-20%)
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseObj1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj1">
-                        <div class="panel-body">
-                            <p>
-                                <a href="?1.1">Deploy Web Apps</a><br />
-                                Define deployment slots; roll back deployments; implement pre and post deployment actions; create, configure, and deploy a package; create App Service plans; migrate Web Apps between App Service plans; create a Web App within an App Service plan
-                            </p>
-                            <p>
-                                <a href="?1.2">Configure Web Apps</a><br />
-                                Define and use app settings, connection strings, handlers, and virtual directories; configure certificates and custom domains; configure SSL bindings and runtime configurations; manage Web Apps by using the API, Azure PowerShell, and Xplat-CLI
-                            </p>
-                            <p>
-                                <a href="?1.3">Configure diagnostics, monitoring, and analytics</a><br />
-                                Retrieve diagnostics data, view streaming logs; configure endpoint monitoring; configure alerts; configure diagnostics; use remote debugging; monitor Web App resources
-                            </p>
-                            <p>
-                                <a href="?1.4">Implement Web Jobs</a><br />
-                                Write web jobs using the SDK, package and deploy web jobs, schedule web jobs
-                            </p>
-                            <p>
-                                <a href="?1.5">Configure Web Apps for scale and resilience</a><br />
-                                Configure auto-scale using built-in and custom schedules, configure by metric, change the size of an instance, configure Traffic Manager
-                            </p>
-                            <!--
-                            <p>
-                                <a href="?1.6">Design and implement applications for scale and resilience</a><br />
-                                Select a pattern, implement transient fault handling for services, respond to throttling, disable Application Request Routing (ARR) affinity
-                            </p>
-                            -->
-                        </div>
-                    </div>
-                </div>
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingObj2">
                         <h4 class="panel-title">
                             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseObj2" aria-expanded="false" aria-controls="collapseObj2">
-                                Create and manage virtual machines (20-25%)
+                                Create and manage Azure Resource Manager Virtual Machines (30-35%)
                             </a>
                         </h4>
                     </div>
                     <div id="collapseObj2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj2">
                         <div class="panel-body">
                             <p>
-                                <a href="?2.1">Deploy workloads on Azure virtual machines (VMs)</a><br />
-                                Identify workloads that can and cannot be deployed, run workloads including Microsoft and Linux, create VMs
+                                <a href="?2.1">Deploy workloads on Azure Resource Manager (ARM) Virtual Machines (VMs)</a><br />
+                                Identify workloads that can and cannot be deployed; run workloads, including Microsoft and Linux; create VMs
                             </p>
                             <p>
-                                <a href="?2.2">Create and manage a VM image or virtual hard disk</a><br />
-                                Create specialized and reusable images, prepare images using SysPrep and Windows Agent (Linux), copy images between storage accounts and subscriptions, upload VMs
+                                Perform configuration management<br />
+                                Automate configuration management by using PowerShell Desired State Configuration and VM Agent (custom script extensions); configure VMs using a configuration management tool, such as Puppet or Chef; enable remote debugging
                             </p>
                             <p>
-                                Perform configuration management<br/>
-                                Automate configuration management by using PowerShell Desired State Configuration and VM Agent (custom script extensions); configure VMs using a configuration management tool such as Puppet or Chef; enable remote debugging
+                                Configure ARM VM networking<br/>
+                                Configure static IP addresses, Network Security Groups (NSG), DNS, User Defined Routes (UDRs), external and internal load balancing with HTTP and TCP health probes, public IPs, firewall rules, and direct server return; design and implement Application Gateway
                             </p>
                             <p>
                                 Configure VM networking<br/>
                                 Configure reserved IP addresses, Network Security Groups (NSG), DNS at the virtual network level, load balancing endpoints, HTTP and TCP health probes, public IPs, firewall rules, direct server return, and keep-alive
                             </p>
                             <p>
-                                Scale VMs<br/>
-                                Scale up and scale down VM sizes; configure auto-scale and availability sets
+                                Scale ARM VMs<br/>
+                                Scale up and scale down VM sizes, deploy ARM VM Scale Sets (VMSS), configure ARM VMSS auto-scale
                             </p>
                             <p>
-                                Design and implement VM storage<br/>
-                                Configure disk caching; plan for storage capacity; configure shared storage using Azure File service; configure geo-replication
+                                Design and implement ARM VM storage<br/>
+                                Configure disk caching, plan for storage capacity, configure shared storage using Azure File service, configure geo-replication, implement ARM VMs with Standard and Premium Storage
                             </p>
                             <p>
-                                Monitor VMs<br/>
-                                Configure endpoint monitoring; configure alerts; configure diagnostics and monitoring storage location
+                                Monitor ARM VMs<br/>
+                                Configure ARM VM monitoring, configure alerts, configure diagnostic and monitoring storage location
+                            </p>
+                            <p>
+                                Manage ARM VM availability</br>
+                                Configure multiple ARM VMs in an availability set for redundancy, configure each application tier into separate availability sets, combine the Load Balancer with availability sets
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingObj3">
-                        <h4 class="panel-title">
-                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseObj3" aria-expanded="false" aria-controls="collapseObj3">
-                                Design and implement Cloud Services (20-25%)
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseObj3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj3">
-                        <div class="panel-body">
-                            <p>
-                                <a href="?3.1">Design and develop a cloud service</a><br />
-                                Install SDKs, install emulators, develop a web role or worker role, design and implement resiliency including transient fault handling, develop startup tasks
-                            </p>
-                            <p>
-                                <a href="?3.2">Configure cloud services and roles</a><br/>
-                                Configure HTTPS endpoint and upload an SSL certificate, and instance count and size; configure network access rules, local storage, multiple Web Apps, custom domains, and dedicated and co-located caching; scale up and scale down role sizes; configure auto-scale
-                            </p>
-                            <p>
-                                <a href="?3.3">Deploy a cloud service</a><br />
-                                Upgrade an automatic, manual, or simultaneous deployment; VIP swap a deployment; package a deployment; implement continuous deployment from Visual Studio Online (VSO); implement runtime configuration changes using the portal; configure regions and affinity groups
-                            </p>
-                            <p>
-                                <a href="?3.4">Monitor and debug a cloud service</a><br />
-                                Configure diagnostics using the SDK or configuration file, profile resource consumption, enable remote debugging, establish a connection using Remote Desktop cmdLets in Azure PowerShell, debug using IntelliTrace or the emulator
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
+
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingObj4">
                         <h4 class="panel-title">
                             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseObj4" aria-expanded="false" aria-controls="collapseObj4">
-                                Design and implement a Storage Strategy (20-25%)
+                                Design and implement a storage and data strategy (25-30%)
                             </a>
                         </h4>
                     </div>
@@ -207,68 +147,113 @@
                         <div class="panel-body">
                             <p>
                                 <a href="?4.1">Implement Azure Storage Blobs and Azure Files</a><br />
-                                Read data, change data, set metadata on a container, store data using block and page blobs, stream data using blobs, access blobs securely, implement async blob copy, configure Content Delivery Network (CDN), design blob hierarchies, configure custom domains, scale blob storage; implement Azure Premium storage
+                                Read data, change data, set metadata on a container, store data using block and page blobs, stream data using blobs, access blobs securely, implement async blob copy, configure Content Delivery Network (CDN), design blob hierarchies, configure custom domains, scale blob storage
                             </p>
                             <p>
-                                <a href="?4.2">Implement Azure storage tables</a><br />
-                                Implement CRUD with and without transactions, design and manage partitions, query using OData; scale tables and partitions
+                                <a href="?4.2">Implement Azure storage tables and queues</a><br />
+                                Implement CRUD with and without transactions, design and manage partitions, query using OData, scale tables and partitions, add and process messages, retrieve a batch of messages, scale queues
                             </p>
                             <p>
-                                <a href="?4.3">Implement Azure Storage queues</a><br />
-                                Add and process messages, retrieve a batch of messages, scale queues
+                                Manage access and monitor storage<br/>
+                                Generate shared access signatures, including client renewal and data validation; create stored access policies; regenerate storage account keys; configure and use Cross-Origin Resource Sharing (CORS); set retention policies and logging levels; analyze logs
                             </p>
                             <p>
-                                Manage access<br/>
-                                Generate shared access signatures, including client renewal and data validation; create stored access policies; regenerate storage account keys; configure and use Cross-Origin Resource Sharing (CORS)
+                                Implement Azure SQL Databases<br/>
+                                Choose the appropriate database tier and performance level, configure and perform point-in-time recovery, enable geo-replication, import and export data and schema, scale Azure SQL databases
                             </p>
                             <p>
-                                Monitor storage<br/>
-                                Set retention policies and logging levels, analyze logs
+                                Implement Azure DocumentDB<br/>
+                                Create databases and collections, query documents, run DocumentDB queries
                             </p>
                             <p>
-                                Implement SQL databases<br/>
-                                Choose the appropriate database tier and performance level, configure and perform point in time recovery, enable geo-replication, import and export data and schema, scale SQL databases
+                                Implement Redis caching<br/>
+                                Choose a cache tier, implement data persistence, implement security and network isolation, tune cluster performance
+                            </p>
+                            <p>
+                                Implement Azure Search<br/>
+                                Create a service index, add data, search an index, handle search results
                             </p>
                         </div>
                     </div>
                 </div>
+
+
                 <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingObj5">
+                    <div class="panel-heading" role="tab" id="headingObj1">
                         <h4 class="panel-title">
-                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseObj5" aria-expanded="false" aria-controls="collapseObj5">
-                                Manage application and network services (15-20%)
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseObj1" aria-expanded="true" aria-controls="collapseObj1">
+                                Manage identity, application, and network services (15-20%)
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseObj5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingObj5">
+                    <div id="collapseObj1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj1">
                         <div class="panel-body">
                             <p>
-                                Integrate an app with Azure Active Directory<br/>
-                                Develop apps that use WS-federation, OAuth, and SAML-P endpoints; query the directory by using graph API
+                                Integrate an app with Azure Active Directory (Azure AD)</br>
+                                Develop apps that use WS-federation, OAuth, and SAML-P endpoints; query the directory using Graph API
                             </p>
                             <p>
-                                Configure a virtual network<br/>
-                                Deploy a VM into a virtual network; deploy a cloud service into a virtual network
+                                Design and implement a communication strategy</br>
+                                Implement hybrid connections to access data sources on-premises, leverage site-to-site (S2S) VPN and ExpressRoute to connect to an on-premises infrastructure
                             </p>
                             <p>
-                                Modify network configuration<br/>
-                                Modify a subnet; import and export network configuration
+                                Design and implement a messaging strategy</br>
+                                Develop and scale messaging solutions using service bus queues, topics, relays, and notification hubs; monitor service bus queues, topics, relays, event hubs, and notification hubs
                             </p>
                             <p>
-                                Design and implement a communication strategy<br/>
-                                Develop messaging solutions using service bus queues, topics, relays, and notification hubs; create service bus namespaces and choose a tier; scale service bus
-                            </p>
-                            <p>
-                                Monitor communications<br/>
-                                Monitor service bus queues, topics, relays, and notification hubs
-                            </p>
-                            <p>
-                                Implement caching<br/>
-                                Implement Redis caching; migrate solutions from Azure Cache Service to use Redis caching
+                                Develop apps that use Azure AD B2C and Azure AD B2B</br>
+                                Design and implement .NET MVC, Web API, and Windows desktop apps that leverage social identity provider authentication, including Microsoft account, Facebook, Google+, Amazon, and LinkedIn; leverage Azure AD B2B to design and implement applications that support partner-managed identities
                             </p>
                         </div>
                     </div>
                 </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingObj1">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseObj1" aria-expanded="true" aria-controls="collapseObj1">
+                                Design and implement Azure PaaS compute and web and mobile services (25-30%)
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseObj1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj1">
+                        <div class="panel-body">
+                            <p>
+                                <a href="?1.1">Deploy Azure App Service Web Apps</a><br />
+                                Define and manage App Service plans; configure Web Apps settings, certificates, and custom domains; manage Web Apps by using the API, Azure PowerShell, and Xplat-CLI; implement diagnostics, monitoring, and analytics; implement web jobs; design and configure Web Apps for scale and resilience
+                            </p>
+                            <p>
+                                Implement Azure Functions<br />
+                                Create Azure Functions, implement a webhook function, create an event processing function, implement an Azure-connected function
+                            </p>
+                            <p>
+                                Implement API Management<br/>
+                                Create managed APIs, configure API management policies, protect APIs with rate limits, add caching to improve performance, monitor APIs, customize the Developer Portal
+                            </p>
+                            <p>
+                                Design Azure App Service API Apps<br/>
+                                Create and deploy API Apps, automate API discovery by using Swashbuckle, use Swagger API metadata to generate client code for an API app, monitor API Apps
+                            </p>
+                            <p>
+                                Develop Azure App Service Logic Apps<br/>
+                                Create a Logic App connecting SaaS services, create a Logic App with B2B capabilities, create a Logic App with XML capabilities, trigger a Logic App from another app, create custom and long-running actions, monitor Logic Apps
+                            </p>
+                            <p>
+                                Develop Azure App Service Mobile Apps<br/>
+                                Create a Mobile App, add offline sync to a Mobile App, add authentication to a Mobile App, add push notifications to a Mobile App
+                            </p>
+                            <p>
+                                <a href="?1.3">Configure diagnostics, monitoring, and analytics</a><br />
+                                Retrieve diagnostics data, view streaming logs; configure endpoint monitoring; configure alerts; configure diagnostics; use remote debugging; monitor Web App resources
+                            </p>
+                            <p>
+                                Design and implement Azure Service Fabric apps<br/>
+                                Create a Service Fabric application; build an Actors-based service; add a web front end to a Service Fabric application; monitor and diagnose services; migrate apps from cloud services; create, secure, upgrade, and scale Service Fabric Cluster in Azure; scale a Service Fabric app
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
 
             <p><small><em>Note: In an effort to allow you to target your studies to specific exam objectives, the practice tests are broken out into each sub-objective having it's own individual practice test.</em></small></p>
@@ -286,9 +271,9 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
                         <div class="caption">
-                            <h3>Free eBooks</h3>
-                            <p>Microsoft Virtual Academy and Microsoft Press have a bunch of Free eBooks available.</p>
-                            <p><a href="http://www.microsoftvirtualacademy.com/ebooks#azure" target="_blank" role="button" class="btn btn-primary">Download eBooks</a></p>
+                            <h3>Books</h3>
+                            <p>Microsoft Virtual Academy and Microsoft Press have a bunch of Free eBooks and paid books available.</p>
+                            <p><a href="http://books.buildazure.com" target="_blank" role="button" class="btn btn-primary">Find eBooks</a></p>
                         </div>
                     </div>
                 </div>
@@ -297,7 +282,7 @@
                         <div class="caption">
                             <h3>Azure Documentation</h3>
                             <p>The Microsoft Azure Documenation contains tons of articles covering everything.</p>
-                            <p><a href="http://azure.microsoft.com/en-us/documentation/" target="_blank" role="button" class="btn btn-primary">Read Documentation</a></p>
+                            <p><a href="https://docs.microsoft.com/azure" target="_blank" role="button" class="btn btn-primary">Read Documentation</a></p>
                         </div>
                     </div>
                 </div>
@@ -305,8 +290,8 @@
                     <div class="thumbnail">
                         <div class="caption">
                             <h3>Are you ready to get Certified?</h3>
-                            <p>If you've mastered these practice tests, then you might be ready for the real thing.</p>
-                            <p><a href="https://www.microsoft.com/learning/en-us/exam-70-532.aspx" target="_blank" role="button" class="btn btn-primary">Schedule Exam</a></p>
+                            <p>If you've mastered the objectives, then you might be ready for the real thing.</p>
+                            <p><a href="https://www.microsoft.com/en-us/learning/exam-70-532.aspx" target="_blank" role="button" class="btn btn-primary">Schedule Exam</a></p>
                         </div>
                     </div>
                 </div>
@@ -314,7 +299,7 @@
                     <div class="thumbnail">
                         <div class="caption">
                             <h3>Free 1-month Azure Trial</h3>
-                            <p>Sign up for Free and get $220 to spend on all Azure services</p>
+                            <p>Sign up for Free and get $200 to spend on all Azure services</p>
                             <p><a href="http://azure.microsoft.com/en-us/pricing/free-trial/" target="_blank" role="button" class="btn btn-primary">Start Trial</a></p>
                         </div>
                     </div>

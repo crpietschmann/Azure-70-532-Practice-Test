@@ -14,6 +14,10 @@ FYI, this is not an exhaustive set of test questions, just some I put together t
 
 ## 70-532 Exam History
 
+**January, 2018** - There were some minor updates to the exam, again. Adding topics like "including custom VM images", "implement VM template variables to configure VMs", "implement StorSimple", and [a few more additions](http://download.microsoft.com/download/B/6/E/B6EA081D-6D3B-410B-8845-435DB39B2000/532_OD_Changes.pdf).
+
+**2017 Calendar Year** - There were some minor updates to the exam during this time,
+
 **November 22, 2016** - Microsoft did a major update to the Developing Microsoft Azure Solutions (70-532) certification exam. This major update removed all the ASM (Azure Service Management) API stuff and replaced it with the newer, current ARM (Azure Resource Management) API stuff. There were also a lot of other updates to refresh the exam overall to be up-to-date on the current state of the Azure platform at that time.
 
 **March 10, 2016** - Microsoft updated the exam objectives some to make the Developing Microsoft Azure Solutions (70-532) certification exam a little more up-to-date.

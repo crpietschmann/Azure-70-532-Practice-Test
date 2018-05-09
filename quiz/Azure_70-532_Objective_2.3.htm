@@ -1,22 +1,22 @@
 <section class="quiz" data-title="Create and manage Azure Resource Manager Virtual Machines" data-subtitle="Configure ARM VM networking">
     <section class="question">
         <section class="text">
-            Can a VNet span across multiple regions?
+            A single Virtual Network (VNet) can span across multiple Azure Regions?
         </section>
         <section class="answer">True</section>
         <section class="answer" data-correct>False</section>
         <section class="description">
-            False, Azure Virtual Networks are only supported for working in one region.
+            False, Azure Virtual Networks are only supported for working within one region. To connect a Virtual Network across multiple Azure Regions requires you to connect multiple VNets together using a Site-to-Site VPN or VNet Peering.
         </section>
     </section>
     <section class="question">
         <section class="text">
-            VNet's support IPv6?
+            Do Virtual Networks (VNets) support IPv6?
         </section>
-        <section class="answer">True</section>
-        <section class="answer" data-correct>False</section>
+        <section class="answer">Yes</section>
+        <section class="answer" data-correct>No</section>
         <section class="description">
-            False, VNet's only support IPv4 for subneting.
+            No. You cannot use IPv6 with VNets at this time. You can however, assign IPv6 addresses to Azure load balancers to load balance virtual machines. For details, see <a href="https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-ipv6-overview?toc=%2fazure%2fvirtual-network%2ftoc.json" target="_blank">Overview of IPv6 for Azure Load Balancer</a>.
         </section>
     </section>
     <section class="question">

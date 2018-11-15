@@ -1,6 +1,6 @@
 # Developing Microsoft Azure Solutions (70-532) Certification Practice Test
 
-**RETIRED: Since the 70-533 certification exam is retired as of December 31, 2018, this project will no longer be updated going forward. Please subscribe to <a href="http://BuildAzure.com">http://BuildAzure.com</a> for the latest on Microsoft and Azure certification news. Thanks!**
+**RETIRED: Since the 70-532 certification exam is retired as of December 31, 2018, this project will no longer be updated going forward. Please subscribe to <a href="http://BuildAzure.com">http://BuildAzure.com</a> for the latest on Microsoft and Azure certification news. Thanks!**
         
 Test your knowledge of Azure with this collection of practice test questions for the Microsoft Azure [70-532](https://www.microsoft.com/learning/en-us/exam-70-532.aspx) Certification - Developing Microsoft Azure Solutions.
 
